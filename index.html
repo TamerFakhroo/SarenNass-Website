@@ -537,15 +537,23 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 /* ─── FLEET ──────────────────────────────── */
 .fleet-bg .sec-desc{color:#8C9399}
 .fleet-bg{background:var(--light)}.fleet-bg .sec-title{color:var(--navy)}.fleet-bg .sec-label-text{color:var(--navy)}.fleet-bg .sec-label-line{background:var(--navy)}.fleet-bg .sec-underline{background:#FFE300}.fleet-bg .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
-.fleet-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.fleet-cell{position:relative;overflow:hidden;text-align:left;background:#1a2530;border-right:1px solid rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.06);cursor:pointer;aspect-ratio:4/3}
-.fleet-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;filter:contrast(1.04) saturate(.9) brightness(.95)}
-.fleet-cell-overlay{display:none}
-.fleet-cell::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(20,30,42,.55) 70%,rgba(15,25,38,.92) 100%);pointer-events:none;z-index:1;transition:opacity .3s ease}
-.fleet-cell::before{content:"";position:absolute;top:14px;left:14px;width:18px;height:3px;background:#FFE300;z-index:3;transition:width .3s ease}
-.fleet-cell:hover::before{width:32px}
-.fleet-cell:hover img{transform:scale(1.05)}
-.fleet-cell h3{z-index:2;position:absolute;bottom:0;left:0;right:0;padding:14px 16px 16px;font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:1.4px;color:#fff;margin:0;line-height:1.2}
+.fleet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fleet-row{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:6px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.fleet-row.reverse{flex-direction:column}
+.fleet-row:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,40,70,.12)}
+.fleet-row-img{position:relative;overflow:hidden;aspect-ratio:4/3;background:#1a2530;order:0}
+.fleet-row.reverse .fleet-row-img{order:0}
+.fleet-row-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.fleet-row-img::before{content:"";position:absolute;top:10px;left:10px;width:18px;height:3px;background:#FFE300;z-index:2;transition:width .3s ease}
+.fleet-row:hover .fleet-row-img img{transform:scale(1.06)}
+.fleet-row:hover .fleet-row-img::before{width:30px}
+.fleet-row-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1;order:1}
+.fleet-row.reverse .fleet-row-body{order:1}
+.fleet-row-body h3{font-size:14px;font-weight:700;color:var(--navy);margin:0 0 6px;letter-spacing:.5px;text-transform:uppercase;line-height:1.3}
+.fleet-row-body p{font-size:12px;line-height:1.6;color:#5a626a;margin:0 0 10px;flex:1}
+.fleet-row-body .fleet-link{font-size:10px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1.2px;text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap .3s ease;margin-top:auto}
+.fleet-row-body .fleet-link:hover{gap:10px}
+.fleet-row-body .fleet-link::after{content:"→";font-size:13px}
 
 /* ─── MARKETS ────────────────────────────── */
 .markets-bg{background:var(--light)}
@@ -917,7 +925,6 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
   .hero-stats{gap:28px;flex-wrap:wrap}
   .hstat-num{font-size:30px}
   .services-grid{grid-template-columns:repeat(2,1fr)}
-  .fleet-grid{grid-template-columns:repeat(2,1fr)}
   .mkt-grid{grid-template-columns:repeat(3,1fr)}
   .countries-grid{grid-template-columns:repeat(2,1fr)}
   .proj-grid{grid-template-columns:repeat(2,1fr)}
@@ -964,8 +971,11 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
   .hstat-label{font-size:9px}
   .hero-eyebrow-text{font-size:11px;letter-spacing:2px}
   .services-grid{grid-template-columns:1fr}
-  .fleet-grid{grid-template-columns:repeat(2,1fr)}
-  .fleet-cell{aspect-ratio:1}
+  .fleet-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .fleet-row,.fleet-row.reverse{flex-direction:column}
+  .fleet-row-body{padding:12px 12px 14px}
+  .fleet-row-body h3{font-size:12px}
+  .fleet-row-body p{font-size:11px}
   .mkt-grid{grid-template-columns:repeat(2,1fr)}
   .countries-grid{grid-template-columns:1fr}
   .country-card{height:220px}
@@ -1035,7 +1045,6 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
   .hero-content h1{font-size:24px}
   .hero-stats{gap:16px}
   .hstat-num{font-size:22px}
-  .fleet-grid{grid-template-columns:1fr}
   .mkt-grid{grid-template-columns:1fr}
   .leader-grid{grid-template-columns:1fr}
   .client-cell{width:50%;padding:16px 10px}
@@ -1226,14 +1235,79 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
     <h2 class="sec-title"><span style="color:#2A5E97">Our</span> <span style="color:#8C9399">Fleet</span></h2>
     <div class="sec-underline"></div>
     <div class="fleet-grid">
-      <div class="fleet-cell"><img src="assets/sarens-nass-mobile-crane-bahrain.jpg" alt="SNME Liebherr all-terrain mobile crane at Bahrain International Circuit (BIC) — Sarens Nass branded heavy lift fleet across the GCC" loading="lazy" width="1200" height="900"><div class="fleet-cell-overlay"></div><h3>Mobile Cranes</h3></div>
-      <div class="fleet-cell"><img src="assets/crawler-cranes.png" alt="SNME lattice boom crawler cranes — LR and CC series up to 1,500T for heavy industrial lifts in Saudi Arabia and UAE" loading="lazy" width="413" height="300"><div class="fleet-cell-overlay"></div><h3>Crawler Cranes</h3></div>
-      <div class="fleet-cell"><img src="assets/axles-spmts.jpg" alt="SNME Self-Propelled Modular Transporters (SPMT) — Goldhofer and Scheuerle axle lines for heavy module transport in the Middle East" loading="lazy" width="1400" height="847"><div class="fleet-cell-overlay"></div><h3>Axles / SPMT's</h3></div>
-      <div class="fleet-cell"><img src="assets/forklifts.png" alt="SNME forklift fleet — heavy-duty material handling equipment for industrial sites across Bahrain and GCC" loading="lazy" width="412" height="300"><div class="fleet-cell-overlay"></div><h3>Forklifts</h3></div>
-      <div class="fleet-cell"><img src="assets/loaders.jpg" alt="SNME wheeled loaders and material handling equipment for port and industrial operations in the GCC" loading="lazy" width="1400" height="934"><div class="fleet-cell-overlay"></div><h3>Loaders</h3></div>
-      <div class="fleet-cell"><img src="assets/power-sweepers.jpg" alt="SNME power sweepers and support equipment for site maintenance at GCC industrial facilities" loading="lazy" width="900" height="666"><div class="fleet-cell-overlay"></div><h3>Power Sweepers</h3></div>
-      <div class="fleet-cell"><img src="assets/manlifts.jpg" alt="SNME manlift fleet — boom lifts and scissor lifts for high-access industrial work across the GCC" loading="lazy" width="764" height="598" decoding="async"><div class="fleet-cell-overlay"></div><h3>Manlifts</h3></div>
-      <div class="fleet-cell"><img src="assets/trucks.jpg" alt="SNME heavy haulage trucks — prime movers and trailers for engineered transport across the Middle East" loading="lazy" width="1400" height="933" decoding="async"><div class="fleet-cell-overlay"></div><h3>Trucks</h3></div>
+
+      <div class="fleet-row">
+        <div class="fleet-row-img"><img src="assets/sarens-nass-mobile-crane-bahrain.jpg" alt="SNME Liebherr all-terrain mobile crane at Bahrain International Circuit — Sarens Nass branded heavy lift fleet across the GCC" loading="lazy" width="1200" height="900"></div>
+        <div class="fleet-row-body">
+          <h3>Mobile Cranes</h3>
+          <p>Comprehensive modern hydraulic telescopic cranes with a variety of capacities and tonnages. All hoisting operations executed by qualified, well-trained professionals with a sharp eye for detail.</p>
+          <a href="#fleet-detail-mobile" onclick="openFleetDetail('mobile');return false;" class="fleet-link" aria-label="Read more about SNME Mobile Cranes">Read More</a>
+        </div>
+      </div>
+
+      <div class="fleet-row reverse">
+        <div class="fleet-row-img"><img src="assets/crawler-cranes.png" alt="SNME lattice boom crawler cranes — LR and CC series for heavy industrial lifts in Saudi Arabia and UAE" loading="lazy" width="413" height="300"></div>
+        <div class="fleet-row-body">
+          <h3>Crawler Cranes</h3>
+          <p>A wide range of lattice boom cranes for many applications. Transported to and assembled on site — their structure allows high capacities and long boom lengths for demanding industrial lifts.</p>
+          <a href="#fleet-detail-crawler" onclick="openFleetDetail('crawler');return false;" class="fleet-link" aria-label="Read more about SNME Crawler Cranes">Read More</a>
+        </div>
+      </div>
+
+      <div class="fleet-row">
+        <div class="fleet-row-img"><img src="assets/axles-spmts.jpg" alt="SNME Self-Propelled Modular Transporters — Goldhofer and Scheuerle axle lines for heavy module transport in the Middle East" loading="lazy" width="1400" height="847"></div>
+        <div class="fleet-row-body">
+          <h3>Axles / SPMTs</h3>
+          <p>Revolutionise heavy-load transportation with Self-Propelled Modular Trailers. Versatile, efficient and powerful — conquers diverse loads from petrochemical modules to offshore topsides.</p>
+          <a href="#fleet-detail-spmt" onclick="openFleetDetail('spmt');return false;" class="fleet-link" aria-label="Read more about SNME SPMTs">Read More</a>
+        </div>
+      </div>
+
+      <div class="fleet-row reverse">
+        <div class="fleet-row-img"><img src="assets/forklifts.png" alt="SNME forklift fleet — heavy-duty material handling equipment for industrial sites across Bahrain and the GCC" loading="lazy" width="412" height="300"></div>
+        <div class="fleet-row-body">
+          <h3>Forklift &amp; Warehousing Equipment</h3>
+          <p>A full range of warehousing equipment — electric, LPG, dual fuel and diesel forklifts, reach trucks, reach stackers, Very Narrow Aisle (VNA), Aisle Masters and pallet-operated trolleys.</p>
+          <a href="#fleet-detail-forklift" onclick="openFleetDetail('forklift');return false;" class="fleet-link" aria-label="Read more about SNME Forklifts and Warehousing Equipment">Read More</a>
+        </div>
+      </div>
+
+      <div class="fleet-row">
+        <div class="fleet-row-img"><img src="assets/loaders.jpg" alt="SNME wheeled loaders and material handling equipment for port and industrial operations in the GCC" loading="lazy" width="1400" height="934"></div>
+        <div class="fleet-row-body">
+          <h3>Loaders</h3>
+          <p>Application-specific wheel and pipe loaders, technically modified to move everything from rocks to pipe — for ports, construction and heavy industrial operations across the region.</p>
+          <a href="#fleet-detail-loaders" onclick="openFleetDetail('loaders');return false;" class="fleet-link" aria-label="Read more about SNME Loaders">Read More</a>
+        </div>
+      </div>
+
+      <div class="fleet-row reverse">
+        <div class="fleet-row-img"><img src="assets/power-sweepers.jpg" alt="SNME power sweepers and support equipment for site maintenance at GCC industrial facilities" loading="lazy" width="900" height="666"></div>
+        <div class="fleet-row-body">
+          <h3>Power Sweepers</h3>
+          <p>Rental services for mechanical and vacuum sweepers across residential, airport, sea port, construction and industrial sectors — keeping critical sites safe, clean and operational.</p>
+          <a href="#fleet-detail-sweepers" onclick="openFleetDetail('sweepers');return false;" class="fleet-link" aria-label="Read more about SNME Power Sweepers">Read More</a>
+        </div>
+      </div>
+
+      <div class="fleet-row">
+        <div class="fleet-row-img"><img src="assets/manlifts.jpg" alt="SNME manlift fleet — boom lifts and scissor lifts for high-access industrial work across the GCC" loading="lazy" width="764" height="598" decoding="async"></div>
+        <div class="fleet-row-body">
+          <h3>Manlifts</h3>
+          <p>A reliable fleet of access platforms with working heights from 20m to 43m in articulated and telescopic boom configurations — for indoor, outdoor, rough terrain and finished flooring access work.</p>
+          <a href="#fleet-detail-manlifts" onclick="openFleetDetail('manlifts');return false;" class="fleet-link" aria-label="Read more about SNME Manlifts">Read More</a>
+        </div>
+      </div>
+
+      <div class="fleet-row reverse">
+        <div class="fleet-row-img"><img src="assets/trucks.jpg" alt="SNME heavy haulage trucks — prime movers and trailers for engineered transport across the Middle East" loading="lazy" width="1400" height="933" decoding="async"></div>
+        <div class="fleet-row-body">
+          <h3>Trucks &amp; Trailers</h3>
+          <p>Up to 200 units of trucks, trailers (flatbed / low-bed / kneel-down) and hydraulic axle lines — the "Single-Source-Supplier" that caters to every customer need from fabrication shop to erection site.</p>
+          <a href="#fleet-detail-trucks" onclick="openFleetDetail('trucks');return false;" class="fleet-link" aria-label="Read more about SNME Trucks and Trailers">Read More</a>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -2834,6 +2908,59 @@ function closeSvcDetail(e) {
   document.getElementById('svcOverlay').style.display = 'none';
   document.body.style.overflow = '';
 }
+
+var fleetData = {
+  mobile: {
+    title: 'Mobile Cranes',
+    tag: 'Hydraulic Telescopic Fleet',
+    body: '<img src="assets/sarens-nass-mobile-crane-bahrain.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">SNME has comprehensive modern hydraulic telescopic cranes with a variety of capacities and tonnages. All hoisting operations are executed by qualified and experienced professionals with a sharp eye for detail.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Upon request, SNME surveys the works to be conducted on site and draws up the necessary hoisting plans and load tables.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Capacity Range</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">25T to 750T<br>All-terrain LTM series<br>Rough-terrain RT series<br>City cranes<br>Truck-mounted cranes</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Key Brands</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Liebherr<br>Grove<br>Tadano<br>Terex<br>Kobelco</div></div></div>'
+  },
+  crawler: {
+    title: 'Crawler Cranes',
+    tag: 'Lattice Boom Fleet',
+    body: '<img src="assets/crawler-cranes.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Sarens Nass has a wide range of lattice boom cranes available for many types of applications. The cranes are transported to and assembled on site — their structure allows high capacities and long boom lengths.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">All hoisting operations are executed by qualified and well-trained professionals with a sharp eye for detail. SNME surveys the works on site and draws up the necessary hoisting plans and load tables.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Capacity Range</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">100T to 1,500T<br>LR series<br>CC series<br>Ringer cranes available<br>Heavy lift configurations</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Applications</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Reactor installation<br>Module lifts<br>Wind turbine erection<br>Bridge construction<br>Refinery turnarounds</div></div></div>'
+  },
+  spmt: {
+    title: 'Axles / SPMTs',
+    tag: 'Heavy Transport',
+    body: '<img src="assets/axles-spmts.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Revolutionise heavy-load transportation with SPMT (Self-Propelled Modular Trailer). Versatile, efficient and powerful — conquers diverse loads with ease, from petrochemical modules to offshore topsides.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">SNME operates one of the largest SPMT fleets in the Middle East, supporting full project lifecycle from heavy haul road transport to plant-site installation.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Equipment</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Goldhofer axle lines<br>Scheuerle SPMTs<br>Modular trailers<br>Hydraulic axle lines<br>Power Pack Units (PPUs)</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Capabilities</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Loads up to 5,000T<br>Module transport<br>Topsides skidding<br>Vessel jacking<br>Refinery shutdowns</div></div></div>'
+  },
+  forklift: {
+    title: 'Forklift & Warehousing Equipment',
+    tag: 'Material Handling Fleet',
+    body: '<img src="assets/forklifts.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Sarens Nass provides a full range of warehousing equipment — electric, LPG, dual fuel and diesel forklifts, as well as reach trucks, reach stackers, Very Narrow Aisle (VNA), Aisle Master and pallet-operated trolleys — to meet all warehousing needs.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">All equipment is maintained to international standards with third-party inspection certifications and trained operators available.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Fleet</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Forklifts 1.5T–45T<br>Reach trucks<br>Reach stackers<br>VNA trucks<br>Aisle Masters</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Sectors</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Warehousing<br>Port operations<br>Construction logistics<br>Industrial plants<br>Airports</div></div></div>'
+  },
+  loaders: {
+    title: 'Loaders',
+    tag: 'Wheel & Pipe Loaders',
+    body: '<img src="assets/loaders.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Sarens Nass provides application-specific wheel and pipe loaders that are technically modified to move everything from rocks to piping — supporting heavy industrial operations across the GCC.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Available for both short and long-term rental, with options for bare, operated or fully maintained packages.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Types</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Wheel loaders<br>Pipe loaders<br>Skid-steer loaders<br>Backhoe loaders<br>Customised attachments</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Applications</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Quarrying<br>Pipe yard handling<br>Construction sites<br>Port operations<br>Bulk material handling</div></div></div>'
+  },
+  sweepers: {
+    title: 'Power Sweepers',
+    tag: 'Site Maintenance Equipment',
+    body: '<img src="assets/power-sweepers.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Sarens Nass provides rental services for mechanical and vacuum sweepers across residential, airport, sea port, construction and industrial sectors.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">A clean operating environment is critical to both safety performance and operational efficiency — our sweeper fleet keeps demanding sites consistently compliant.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Types</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Mechanical sweepers<br>Vacuum sweepers<br>Ride-on sweepers<br>Pedestrian sweepers<br>Industrial scrubbers</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Sectors</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Airports<br>Sea ports<br>Industrial plants<br>Construction sites<br>Residential</div></div></div>'
+  },
+  manlifts: {
+    title: 'Manlifts',
+    tag: 'Access Platforms',
+    body: '<img src="assets/manlifts.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">SNME has a fleet of reliable, safe and durable access platforms with working heights ranging from 20m to 43m in articulated and telescopic boom configurations. Suitable for both indoor and outdoor applications.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Whether on rough terrain or finished flooring, these diesel-powered self-propelled lift platforms can reach up, over and above obstacles to handle the most demanding access work.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Types</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Articulated boom lifts<br>Telescopic boom lifts<br>Scissor lifts<br>Spider lifts<br>Vertical mast lifts</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Specifications</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Working height 20m–43m<br>Diesel & electric<br>Rough-terrain capable<br>Indoor/outdoor use<br>Trained operators</div></div></div>'
+  },
+  trucks: {
+    title: 'Trucks & Trailers',
+    tag: 'Heavy Haulage Fleet',
+    body: '<img src="assets/trucks.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">SNME owns up to 200 units of trucks, trailers (flatbed, low-bed, kneel-down) and hydraulic axle lines to provide flexibility of choice for every customer.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">We are considered the "Single-Source-Supplier" — able to cater to all customer needs from fabrication shop right through to project site erection.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Fleet</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Prime movers (Volvo, Mercedes, Scania)<br>Flatbed trailers<br>Low-bed trailers<br>Kneel-down trailers<br>Hydraulic axle lines</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Services</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Heavy haulage<br>Project cargo<br>Cross-border GCC<br>Site-to-site logistics<br>Permitted loads</div></div></div>'
+  }
+};
+
+function openFleetDetail(key) {
+  var d = fleetData[key];
+  if (!d) return;
+  document.getElementById('svcTitle').textContent = d.title;
+  document.getElementById('svcTag').textContent = d.tag;
+  document.getElementById('svcBody').innerHTML = d.body;
+  document.getElementById('svcOverlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
 </script>
 
 <!-- ═══ SUPABASE — RFQ FORM INTEGRATION ══════════════════════════════════ -->
@@ -2885,4 +3012,4 @@ function closeSvcDetail(e) {
     m.scrollIntoView({behavior:'smooth',block:'nearest'});
   }
 </script>
-</body></html
+</body></html>
