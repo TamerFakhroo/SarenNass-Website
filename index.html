@@ -1410,7 +1410,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
           <span class="cf-tag">GCC Fleet</span>
         </div>
         <div class="cf-result-note" id="cfNote">Suitable for open sites with standard ground bearing. Our engineers will verify with a formal lift study.</div>
-        <a href="#rfq" class="btn-on-dark" style="margin-top:20px">Request A Lift Study →</a>
+        <a href="#rfq" class="btn-on-dark" style="margin-top:20px" onclick="prefillRFQFromSelector(event)">Request A Lift Study →</a>
       </div>
     </div>
   </div>
@@ -2465,6 +2465,74 @@ function updateCraneFinder(){
   var tEl=document.getElementById('cfTags');
   tEl.innerHTML=tags.map(t=>'<span class="cf-tag">'+t+'</span>').join('');
   document.getElementById('cfNote').textContent=note;
+}
+
+function prefillRFQFromSelector(ev){
+  // Read all 7 selector fields
+  var w=parseInt(document.getElementById('cfWeight').value);
+  var h=parseInt(document.getElementById('cfHeight').value);
+  var r=parseInt(document.getElementById('cfRadius').value);
+  var ground=document.getElementById('cfSite').value;
+  var nature=(document.getElementById('cfNature').value||'').trim();
+  var dur=document.getElementById('cfDuration');
+  var rest=document.getElementById('cfRestrictions');
+  var durTxt=dur.options[dur.selectedIndex]?dur.options[dur.selectedIndex].text:'';
+  var restTxt=rest.options[rest.selectedIndex]?rest.options[rest.selectedIndex].text:'';
+  var recName=(document.getElementById('cfName').textContent||'').trim();
+  var recRange=(document.getElementById('cfRange').textContent||'').trim();
+
+  // Build a concise scope summary for the "Estimated Load / Scope" field
+  var scopeBits=[];
+  if(w) scopeBits.push(w+'T load');
+  if(h) scopeBits.push(h+'m lift height');
+  if(r) scopeBits.push(r+'m radius');
+  if(durTxt && durTxt!=='Select duration…') scopeBits.push(durTxt.toLowerCase());
+  var scope=scopeBits.join(' · ');
+
+  // Build a detailed project description
+  var desc='';
+  if(nature) desc+='Nature of the job:\n'+nature+'\n\n';
+  desc+='Lift parameters:\n';
+  if(w) desc+='• Load weight: '+w+'T\n';
+  if(h) desc+='• Lift height: '+h+'m\n';
+  if(r) desc+='• Working radius: '+r+'m\n';
+  if(ground) desc+='• Ground type: '+ground.charAt(0).toUpperCase()+ground.slice(1)+'\n';
+  if(durTxt && durTxt!=='Select duration…') desc+='• Duration: '+durTxt+'\n';
+  if(restTxt && restTxt!=='Select…') desc+='• Site restrictions: '+restTxt+'\n';
+  if(recName) desc+='\nSNME selector recommendation: '+recName+(recRange?' ('+recRange+')':'')+'\n';
+
+  // Map duration to RFQ timeline dropdown
+  var rfqTimeline=document.getElementById('rfqTimeline');
+  var durVal=dur.value;
+  var timelineMap={'<1d':'Immediate (within 30 days)','1d-1w':'Immediate (within 30 days)','1w-1m':'Immediate (within 30 days)','1m-3m':'1–3 months','3m-6m':'3–6 months','6m-1y':'6+ months','>1y':'6+ months'};
+  if(timelineMap[durVal]){
+    for(var i=0;i<rfqTimeline.options.length;i++){
+      if(rfqTimeline.options[i].text===timelineMap[durVal]){ rfqTimeline.selectedIndex=i; break; }
+    }
+  }
+
+  // Default to "Heavy Lift & Cranes" service since this came from the lift calculator
+  var rfqService=document.getElementById('rfqService');
+  for(var j=0;j<rfqService.options.length;j++){
+    if(rfqService.options[j].text==='Heavy Lift & Cranes'){ rfqService.selectedIndex=j; break; }
+  }
+
+  // Fill the form
+  var scopeEl=document.getElementById('rfqScope');
+  var descEl=document.getElementById('rfqDescription');
+  if(scope) scopeEl.value=scope;
+  if(desc) descEl.value=desc;
+
+  // Highlight the prefilled fields briefly
+  var highlight=[scopeEl,descEl,rfqService,rfqTimeline];
+  highlight.forEach(function(el){
+    if(!el) return;
+    var prev=el.style.boxShadow;
+    el.style.transition='box-shadow .4s ease,background .4s ease';
+    el.style.boxShadow='0 0 0 2px #FFE300';
+    el.style.background='#FFFCE6';
+    setTimeout(function(){ el.style.boxShadow=prev||''; el.style.background=''; },2200);
+  });
 }
 </script>
 
