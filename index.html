@@ -504,7 +504,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .sec-title{font-size:clamp(28px,3vw,42px);font-weight:900;color:#2A5E97;line-height:1.05;letter-spacing:-.5px}
 .sec-title span{color:#2A5E97}
 .sec-underline{width:60px;height:3px;background:#FFE300;margin:16px 0 40px}
-.sec-desc{font-size:16px;font-weight:700;color:#8C9399;line-height:1.8;max-width:640px;margin-bottom:48px}
+.sec-desc{font-size:16px;font-weight:400;color:#8C9399;line-height:1.8;max-width:640px;margin-bottom:48px}
 
 /* ─── SERVICES ───────────────────────────── */
 .services-bg{background:var(--light)}
@@ -518,7 +518,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .svc-card:hover img{transform:scale(1.05)}
 .svc-body{padding:22px;display:flex;flex-direction:column;flex:1}
 .svc-body h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#2A5E97;margin-bottom:8px;transition:color .25s}
-.svc-body p{font-size:16px;color:#8C9399;line-height:1.65;margin-bottom:14px;transition:color .25s;font-weight:500;flex:1}
+.svc-body p{font-size:16px;color:#8C9399;line-height:1.65;margin-bottom:14px;transition:color .25s;font-weight:400;flex:1}
 .svc-link{font-size:12px;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:6px;transition:color .2s}
 .svc-link::after{content:'→'}
 .svc-link:hover{color:#0057A8}
@@ -558,10 +558,10 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .markets-bg{background:var(--light)}
 .mkt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .mkt-item{display:flex;flex-direction:column;align-items:center;gap:10px;padding:26px 14px;border:2px solid #54585A;background:var(--light);text-align:center;transition:box-shadow .3s,transform .3s,background .25s;cursor:pointer}
-.mkt-item:hover{box-shadow:0 16px 48px rgba(0,0,0,.15);transform:translateY(-3px);background:var(--navy);border-color:#FFE300}
-.mkt-item:hover img,.mkt-item:hover svg{filter:brightness(0) invert(1) !important}
+.mkt-item:hover{box-shadow:0 16px 48px rgba(0,0,0,.15);transform:translateY(-3px);background:var(--navy)}
+.mkt-item:hover img{filter:brightness(0) invert(1) !important} .mkt-item:hover svg{color:#fff}
 .mkt-item:hover h3{color:#fff}
-.mkt-item img{width:36px;height:36px;object-fit:contain;filter:invert(27%) sepia(60%) saturate(400%) hue-rotate(185deg) brightness(70%);transition:filter .25s ease} .mkt-item svg{color:var(--navy);transition:color .25s ease,filter .25s ease;filter:invert(27%) sepia(60%) saturate(400%) hue-rotate(185deg) brightness(70%)}
+.mkt-item img{width:36px;height:36px;object-fit:contain;filter:invert(27%) sepia(60%) saturate(400%) hue-rotate(185deg) brightness(70%);transition:filter .25s ease} .mkt-item svg{width:36px;height:36px;color:var(--navy);transition:color .25s ease}
 .mkt-item h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--navy);transition:color .25s ease} .mkt-item:hover h3{color:#fff}
 .subscribe-bar{margin-top:44px;background:#2A5E97;padding:32px 44px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .subscribe-bar p{font-size:18px;font-weight:600;color:#fff}
@@ -613,13 +613,13 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .platform-bg .sec-label-text{color:var(--navy)}
 .platform-bg .sec-label-line{background:var(--navy)}
 .platform-bg .sec-underline{background:#FFE300}
-.platform-bg .sec-desc{color:#8C9399;font-weight:500;font-size:18px}
+.platform-bg .sec-desc{color:#8C9399;font-weight:400;font-size:18px}
 .partner-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}
 .partner-card{background:var(--light);border:none;padding:40px;position:relative;transition:box-shadow .3s,transform .3s,background .25s;cursor:pointer}
 .partner-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.15);transform:translateY(-3px);background:var(--navy)} .partner-card:hover .partner-name{color:#fff} .partner-card:hover .partner-desc{color:rgba(255,255,255,.8)}
 .partner-tag{display:inline-block;background:#2A5E97;color:#fff;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:4px 12px;margin-bottom:18px}
 .partner-name{font-size:26px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;line-height:1;transition:color .25s}
-.partner-desc{font-size:16px;color:#8C9399;line-height:1.75;font-weight:500;transition:color .25s}
+.partner-desc{font-size:16px;color:#8C9399;line-height:1.75;font-weight:400;transition:color .25s}
 .partner-arrow{position:absolute;bottom:26px;right:26px;width:34px;height:34px;border:1px solid rgba(42,94,151,.3);display:flex;align-items:center;justify-content:center;color:#2A5E97;font-size:16px;transition:all .2s}
 .partner-card:hover .partner-arrow{background:#2A5E97;border-color:#2A5E97;color:#fff}
 
@@ -638,7 +638,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .esg-bg .sec-label-text{color:var(--navy)}
 .esg-bg .sec-label-line{background:var(--navy)}
 .esg-bg .sec-underline{background:#FFE300}
-.esg-bg .sec-desc{color:#8C9399;font-weight:500}
+.esg-bg .sec-desc{color:#8C9399;font-weight:400}
 .esg-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:44px;border:1px solid #D9DEE2}
 .esg-pillar{padding:40px 36px;border-right:none;border:none;position:relative;background:var(--light);transition:box-shadow .3s,transform .3s,background .25s;cursor:pointer;display:flex;flex-direction:column}
 .esg-pillar:hover{box-shadow:0 16px 48px rgba(0,0,0,.15);transform:translateY(-3px);background:var(--navy)}
@@ -675,7 +675,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .ins-date{font-size:10px;color:#8C9399;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;transition:color .25s}
 .ins-title{font-size:17px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:10px;transition:color .25s}
 .ins-card:not(:first-child) .ins-title{font-size:14px}
-.ins-excerpt{font-size:16px;color:#8C9399;line-height:1.68;transition:color .25s;font-weight:500}
+.ins-excerpt{font-size:16px;color:#8C9399;line-height:1.68;transition:color .25s;font-weight:400}
 .ins-card:not(:first-child) .ins-excerpt{display:none}
 
 /* ─── LEADERSHIP ─────────────────────────── */
@@ -709,7 +709,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .careers-bg .sec-label-line{background:var(--navy)}
 .careers-bg .sec-underline{background:#FFE300}
 .careers-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
-.careers-text p{font-size:18px;font-weight:500;color:#8C9399;line-height:1.8;margin-bottom:22px}
+.careers-text p{font-size:18px;font-weight:400;color:#8C9399;line-height:1.8;margin-bottom:22px}
 .jobs{display:flex;flex-direction:column;gap:10px}
 /* Dark grey frames — v3 */
 .job{background:#8C9399;border:2px solid #8C9399;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:box-shadow .25s,transform .25s,background .25s;cursor:pointer}
@@ -731,9 +731,9 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .jd-body{padding:36px 40px}
 .jd-section{margin-bottom:28px}
 .jd-section h4{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--navy);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid #FFE300;display:inline-block}
-.jd-section p{font-size:14px;color:#606566;line-height:1.75;margin-bottom:10px;font-weight:600}
+.jd-section p{font-size:14px;color:#606566;line-height:1.75;margin-bottom:10px;font-weight:400}
 .jd-section ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
-.jd-section ul li{font-size:14px;color:#606566;line-height:1.6;padding-left:18px;position:relative;font-weight:600}
+.jd-section ul li{font-size:14px;color:#606566;line-height:1.6;padding-left:18px;position:relative;font-weight:400}
 .jd-section ul li::before{content:'—';position:absolute;left:0;color:var(--navy);font-size:12px}
 /* CV Upload / Apply Box */
 .jd-apply-box{background:#F5F6F8;border-top:3px solid #FFE300;padding:0}
@@ -773,7 +773,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .rfq-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:start}
 .rfq-info h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--navy);margin-top:26px;margin-bottom:7px}
 .rfq-info h4:first-of-type{margin-top:0}
-.rfq-info p{font-size:16px;color:#8C9399;line-height:1.75;font-weight:500}
+.rfq-info p{font-size:16px;color:#8C9399;line-height:1.75;font-weight:400}
 .rfq-hotline{padding-top:20px;border-top:2px solid #D9DEE2;display:flex;align-items:center;gap:10px;flex-wrap:nowrap}
 .rfq-hotline-lbl{font-size:20px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#8C9399}
 .rfq-hotline-num{font-size:30px;font-weight:700;color:#2A5E97;letter-spacing:.5px}
@@ -851,7 +851,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
 .cf-result-range{font-size:16px;color:#F5C518;font-weight:700;margin-bottom:20px}
 .cf-result-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
 .cf-tag{background:rgba(255,255,255,.12);color:#D9DEE2;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px}
-.cf-result-note{font-size:16px;color:rgba(255,255,255,.65);line-height:1.6;border-top:1px solid rgba(255,255,255,.12);padding-top:16px;font-weight:700}
+.cf-result-note{font-size:16px;color:rgba(255,255,255,.65);line-height:1.6;border-top:1px solid rgba(255,255,255,.12);padding-top:16px;font-weight:400}
 
 /* ─── GCC MAP ─────────────────────────────── */
 .gcc-map-bg{background:var(--light)}
@@ -1423,26 +1423,15 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
     <h2 class="sec-title"><span style="color:#2A5E97">Market</span> <span style="color:#8C9399">Segments</span></h2>
     <div class="sec-underline"></div>
     <div class="mkt-grid">
-      <div class="mkt-item"><img src="assets/oil-and-gas.png" alt="Oil" loading="lazy" decoding="async"><h3>Oil &amp; Gas</h3></div>
-      <div class="mkt-item"><img src="assets/aviation.png" alt="Aviation" loading="lazy" decoding="async"><h3>Airports</h3></div>
-      <div class="mkt-item"><img src="assets/marine.png" alt="Marine" loading="lazy" decoding="async"><h3>Marine</h3></div>
-      <div class="mkt-item"><img src="assets/infrastructure.png" alt="Infra" loading="lazy" decoding="async"><h3>Infrastructure</h3></div>
-      <div class="mkt-item"><img src="assets/petrochemical.png" alt="Petro" loading="lazy" decoding="async"><h3>Petrochemical</h3></div>
-      <div class="mkt-item"><img src="assets/rail.png" alt="Rail" loading="lazy" decoding="async"><h3>Rail</h3></div>
-      <div class="mkt-item"><img src="assets/power-plants.png" alt="Power" loading="lazy" decoding="async"><h3>Power Plants</h3></div>
-      <div class="mkt-item"><img src="assets/construction.png" alt="Construction" loading="lazy" decoding="async"><h3>Construction</h3></div>
-      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;transition:filter .25s ease"><path d="M4 28V14l14-8 14 8v14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><rect x="13" y="18" width="10" height="10" rx="1" stroke="currentColor" stroke-width="2"></rect><path d="M13 22h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><line x1="18" y1="18" x2="18" y2="28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line></svg><h3>Smart Warehousing</h3></div>
-      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;transition:filter .25s ease"><circle cx="8" cy="10" r="3" stroke="currentColor" stroke-width="2"></circle><circle cx="28" cy="10" r="3" stroke="currentColor" stroke-width="2"></circle><circle cx="18" cy="28" r="3" stroke="currentColor" stroke-width="2"></circle><path d="M11 10h14M9.5 12.5L16.5 26M26.5 12.5L19.5 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><h3>Logistics Network</h3></div>
-      <div class="mkt-item"><svg width="40" height="44" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;transition:filter .25s ease">
-  <path d="M18 22 L16 40 L24 40 L22 22Z" fill="currentColor"></path>
-  <path d="M14 40 L17 40 L15.5 43Z" fill="currentColor"></path>
-  <path d="M26 40 L23 40 L24.5 43Z" fill="currentColor"></path>
-  <circle cx="20" cy="20" r="4" fill="currentColor"></circle>
-  <circle cx="20" cy="20" r="1.8" fill="white"></circle>
-  <path d="M18.5 17 C17 12 14 6 11 2 C13 6 16 13 18.5 18Z" fill="currentColor"></path>
-  <path d="M23 21 C27 22 32 24 37 26 C33 23 27 21 22 20Z" fill="currentColor"></path>
-  <path d="M17 22 C13 24 8 27 3 29 C7 26 13 23 18 21Z" fill="currentColor"></path>
-</svg><h3>Wind Power</h3></div>
+      <div class="mkt-item"><svg width="40" height="40" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:40px;height:40px;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><path d="M5 31h26"/><path d="M14 31 19 12M24 31 19 12"/><path d="M15.7 26h6.6"/><path d="M15 31 22.3 26M24 31 15.7 26"/><path d="M5 9 30 15.5"/><path d="M6.6 8.7C3.8 8.2 2.4 10.8 3 14"/><path d="M3.3 13.6V22"/><path d="M2.1 22h4.4"/><path d="M30 15.5 30.4 23"/><circle cx="30.2" cy="24.4" r="2.1"/></svg><h3>Oil &amp; Gas</h3></div>
+      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="6.5" r="2.5"/><path d="M18 9v21"/><path d="M12.5 13.5h11"/><path d="M7 23a11 11 0 0 0 22 0"/><path d="M7 23l-2.5-1.5M7 23l.5 3M29 23l2.5-1.5M29 23l-.5 3"/></svg><h3>Marine</h3></div>
+      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M4 26h28"/><path d="M12 26V11M24 26V11"/><path d="M12 11 7 26M12 11l5 15M24 11l-5 15M24 11l5 15"/><path d="M4 26v3M32 26v3"/></svg><h3>Infrastructure</h3></div>
+      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="9" y="5" width="18" height="22" rx="3"/><rect x="12.5" y="9" width="11" height="7" rx="1"/><circle cx="14" cy="21" r="1.3"/><circle cx="22" cy="21" r="1.3"/><path d="M8 31h20M13 27l-2 4M23 27l2 4"/></svg><h3>Rail</h3></div>
+      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M12 31c0-7 2-10 2-15M24 31c0-7-2-10-2-15"/><path d="M13.5 16h9"/><path d="M11 31h14"/><path d="M16 6c-1 2-3 4-3 4M20 6c1 2 3 4 3 4"/></svg><h3>Power Plants</h3></div>
+      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M13 31V7"/><path d="M10 7 13 3l3 4"/><path d="M7 7h23"/><path d="M26 7v6"/><path d="M24 13h4l-2 3z"/><path d="M9.5 31h7L13 24z"/></svg><h3>Construction</h3></div>
+      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M5 31V15l13-8 13 8v16"/><path d="M5 31h26"/><rect x="13" y="20" width="10" height="11" rx="1"/><path d="M13 24h10M13 27.5h10"/></svg><h3>Smart Warehousing</h3></div>
+      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="3.2"/><circle cx="7" cy="8" r="2.6"/><circle cx="29" cy="8" r="2.6"/><circle cx="18" cy="30" r="2.6"/><path d="M15.6 15.8 9 9.8M20.4 15.8 27 9.8M18 21.2v6"/></svg><h3>Logistics Network</h3></div>
+      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M15 31h6"/><path d="M18 31V17"/><circle cx="18" cy="15" r="1.8"/><path d="M18 13V4M19.4 16.2 27.5 21M16.6 16.2 8.5 21"/></svg><h3>Wind Power</h3></div>
     </div>
   </div>
 </section>
@@ -1692,13 +1681,12 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
         <div class="leader-avatar"><img src="assets/ludo-sarens.jpg" alt="Ludo Sarens" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
         <div class="leader-name">Ludo Sarens</div><div class="leader-title">Vice President</div>
       </div>
-<div class="leader-card">
-  <div class="leader-avatar"><img src="assets/alhanoof-nass.jpg" ...></div>
-  <div class="leader-name">Alhanoof Nass</div>
-  <div class="leader-title">Regional Director</div>
-</div>
       <div class="leader-card">
-       <div class="leader-avatar"><img src="assets/wim-sarens.jpg" alt="Wim Sarens" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
+        <div class="leader-avatar"><img src="assets/alhanoof-nass.jpg" alt="Alhanoof Nass" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
+        <div class="leader-name">Alhanoof Nass</div><div class="leader-title">Regional Director</div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-avatar"><img src="assets/wim-sarens.jpg" alt="Wim Sarens" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
         <div class="leader-name">Wim Sarens</div><div class="leader-title">CEO</div>
       </div>
     </div>
@@ -2026,11 +2014,11 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
       <div class="rfq-form">
         <h3>Project Enquiry Form</h3>
         <div class="frow">
-          <div class="fg"><label class="fl">First Name</label><input type="text" id="rfqFirstName" class="fi" placeholder="Ahmed"></div>
-          <div class="fg"><label class="fl">Last Name</label><input type="text" id="rfqLastName" class="fi" placeholder="Al Mansoori"></div>
+          <div class="fg"><label class="fl">First Name</label><input type="text" id="rfqFirstName" class="fi" placeholder="First Name"></div>
+          <div class="fg"><label class="fl">Last Name</label><input type="text" id="rfqLastName" class="fi" placeholder="Last Name"></div>
         </div>
         <div class="frow">
-          <div class="fg"><label class="fl">Company</label><input type="text" id="rfqCompany" class="fi" placeholder="Organisation"></div>
+          <div class="fg"><label class="fl">Company</label><input type="text" id="rfqCompany" class="fi" placeholder="Company"></div>
           <div class="fg"><label class="fl">Country</label>
             <select id="rfqCountry" class="fs"><option value="">Select Country</option><option>Bahrain</option><option>Saudi Arabia</option><option>UAE</option><option>Qatar</option><option>Kuwait</option><option>Oman</option></select>
           </div>
