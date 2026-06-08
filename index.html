@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#"><head>
 <meta charset="UTF-8">
@@ -379,7 +380,7 @@
   "@type": "NewsArticle",
   "headline": "SNME Awarded Full-Scope Shutdown Package for Major Bahrain Refinery Turnaround",
   "description": "Marking a milestone for the SNME-NIS JV, this contract covers full mechanical scope, refractory, insulation, and all critical lifts — the first fully integrated S&T award in the JV's history.",
-  "image": "assets/shutdown-services.png",
+  "image": "https://a.storyblok.com/f/268200/412x300/18aa50156b/shutdown_services.png",
   "datePublished": "2025-03-01",
   "dateModified": "2025-03-01",
   "author": {"@type": "Organization", "name": "Sarens Nass Middle East"},
@@ -504,7 +505,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .sec-title{font-size:clamp(28px,3vw,42px);font-weight:900;color:#2A5E97;line-height:1.05;letter-spacing:-.5px}
 .sec-title span{color:#2A5E97}
 .sec-underline{width:60px;height:3px;background:#FFE300;margin:16px 0 40px}
-.sec-desc{font-size:16px;font-weight:400;color:#8C9399;line-height:1.8;max-width:640px;margin-bottom:48px}
+.sec-desc{font-size:16px;font-weight:700;color:#8C9399;line-height:1.8;max-width:640px;margin-bottom:48px}
 
 /* ─── SERVICES ───────────────────────────── */
 .services-bg{background:var(--light)}
@@ -518,7 +519,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .svc-card:hover img{transform:scale(1.05)}
 .svc-body{padding:22px;display:flex;flex-direction:column;flex:1}
 .svc-body h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#2A5E97;margin-bottom:8px;transition:color .25s}
-.svc-body p{font-size:16px;color:#8C9399;line-height:1.65;margin-bottom:14px;transition:color .25s;font-weight:400;flex:1}
+.svc-body p{font-size:16px;color:#8C9399;line-height:1.65;margin-bottom:14px;transition:color .25s;font-weight:500;flex:1}
 .svc-link{font-size:12px;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:6px;transition:color .2s}
 .svc-link::after{content:'→'}
 .svc-link:hover{color:#0057A8}
@@ -536,32 +537,23 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 /* ─── FLEET ──────────────────────────────── */
 .fleet-bg .sec-desc{color:#8C9399}
 .fleet-bg{background:var(--light)}.fleet-bg .sec-title{color:var(--navy)}.fleet-bg .sec-label-text{color:var(--navy)}.fleet-bg .sec-label-line{background:var(--navy)}.fleet-bg .sec-underline{background:#FFE300}.fleet-bg .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
-.fleet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.fleet-row{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:6px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
-.fleet-row.reverse{flex-direction:column}
-.fleet-row:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,40,70,.12)}
-.fleet-row-img{position:relative;overflow:hidden;aspect-ratio:4/3;background:#1a2530;order:0}
-.fleet-row.reverse .fleet-row-img{order:0}
-.fleet-row-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-.fleet-row-img::before{content:"";position:absolute;top:10px;left:10px;width:18px;height:3px;background:#FFE300;z-index:2;transition:width .3s ease}
-.fleet-row:hover .fleet-row-img img{transform:scale(1.06)}
-.fleet-row:hover .fleet-row-img::before{width:30px}
-.fleet-row-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1;order:1}
-.fleet-row.reverse .fleet-row-body{order:1}
-.fleet-row-body h3{font-size:14px;font-weight:700;color:var(--navy);margin:0 0 6px;letter-spacing:.5px;text-transform:uppercase;line-height:1.3}
-.fleet-row-body p{font-size:12px;line-height:1.6;color:#5a626a;margin:0 0 10px;flex:1}
-.fleet-row-body .fleet-link{font-size:10px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1.2px;text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap .3s ease;margin-top:auto}
-.fleet-row-body .fleet-link:hover{gap:10px}
-.fleet-row-body .fleet-link::after{content:"→";font-size:13px}
+.fleet-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.fleet-cell{position:relative;overflow:hidden;text-align:center;background:#fff;border-right:1px solid rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.06);cursor:pointer;aspect-ratio:4/3}
+filter:saturate(.55) hue-rotate(190deg) brightness(.95)}
+.fleet-cell-overlay{display:none}
+.fleet-cell::after{content:"";position:absolute;inset:0;background:rgba(42,93,151,.28);pointer-events:none;z-index:1}
+.fleet-cell:hover img{transform:scale(1.06)}
+.fleet-cell h3{z-index:2;position:absolute;bottom:0;left:0;right:0;padding:14px 12px 16px;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#fff;background:linear-gradient(transparent,rgba(42,94,151,.82));opacity:0;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease;z-index:2}
+.fleet-cell:hover h3{opacity:1;transform:translateY(0)}
 
 /* ─── MARKETS ────────────────────────────── */
 .markets-bg{background:var(--light)}
 .mkt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .mkt-item{display:flex;flex-direction:column;align-items:center;gap:10px;padding:26px 14px;border:2px solid #54585A;background:var(--light);text-align:center;transition:box-shadow .3s,transform .3s,background .25s;cursor:pointer}
-.mkt-item:hover{box-shadow:0 16px 48px rgba(0,0,0,.15);transform:translateY(-3px);background:var(--navy)}
-.mkt-item:hover img{filter:brightness(0) invert(1) !important} .mkt-item:hover svg{color:#fff}
+.mkt-item:hover{box-shadow:0 16px 48px rgba(0,0,0,.15);transform:translateY(-3px);background:var(--navy);border-color:#FFE300}
+.mkt-item:hover img,.mkt-item:hover svg{filter:brightness(0) invert(1) !important}
 .mkt-item:hover h3{color:#fff}
-.mkt-item img{width:36px;height:36px;object-fit:contain;filter:invert(27%) sepia(60%) saturate(400%) hue-rotate(185deg) brightness(70%);transition:filter .25s ease} .mkt-item svg{width:36px;height:36px;color:var(--navy);transition:color .25s ease}
+.mkt-item img{width:36px;height:36px;object-fit:contain;filter:invert(27%) sepia(60%) saturate(400%) hue-rotate(185deg) brightness(70%);transition:filter .25s ease} .mkt-item svg{color:var(--navy);transition:color .25s ease,filter .25s ease;filter:invert(27%) sepia(60%) saturate(400%) hue-rotate(185deg) brightness(70%)}
 .mkt-item h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--navy);transition:color .25s ease} .mkt-item:hover h3{color:#fff}
 .subscribe-bar{margin-top:44px;background:#2A5E97;padding:32px 44px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .subscribe-bar p{font-size:18px;font-weight:600;color:#fff}
@@ -613,13 +605,13 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .platform-bg .sec-label-text{color:var(--navy)}
 .platform-bg .sec-label-line{background:var(--navy)}
 .platform-bg .sec-underline{background:#FFE300}
-.platform-bg .sec-desc{color:#8C9399;font-weight:400;font-size:18px}
+.platform-bg .sec-desc{color:#8C9399;font-weight:500;font-size:18px}
 .partner-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}
 .partner-card{background:var(--light);border:none;padding:40px;position:relative;transition:box-shadow .3s,transform .3s,background .25s;cursor:pointer}
 .partner-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.15);transform:translateY(-3px);background:var(--navy)} .partner-card:hover .partner-name{color:#fff} .partner-card:hover .partner-desc{color:rgba(255,255,255,.8)}
 .partner-tag{display:inline-block;background:#2A5E97;color:#fff;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:4px 12px;margin-bottom:18px}
 .partner-name{font-size:26px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;line-height:1;transition:color .25s}
-.partner-desc{font-size:16px;color:#8C9399;line-height:1.75;font-weight:400;transition:color .25s}
+.partner-desc{font-size:16px;color:#8C9399;line-height:1.75;font-weight:500;transition:color .25s}
 .partner-arrow{position:absolute;bottom:26px;right:26px;width:34px;height:34px;border:1px solid rgba(42,94,151,.3);display:flex;align-items:center;justify-content:center;color:#2A5E97;font-size:16px;transition:all .2s}
 .partner-card:hover .partner-arrow{background:#2A5E97;border-color:#2A5E97;color:#fff}
 
@@ -638,7 +630,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .esg-bg .sec-label-text{color:var(--navy)}
 .esg-bg .sec-label-line{background:var(--navy)}
 .esg-bg .sec-underline{background:#FFE300}
-.esg-bg .sec-desc{color:#8C9399;font-weight:400}
+.esg-bg .sec-desc{color:#8C9399;font-weight:500}
 .esg-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:44px;border:1px solid #D9DEE2}
 .esg-pillar{padding:40px 36px;border-right:none;border:none;position:relative;background:var(--light);transition:box-shadow .3s,transform .3s,background .25s;cursor:pointer;display:flex;flex-direction:column}
 .esg-pillar:hover{box-shadow:0 16px 48px rgba(0,0,0,.15);transform:translateY(-3px);background:var(--navy)}
@@ -675,7 +667,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .ins-date{font-size:10px;color:#8C9399;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;transition:color .25s}
 .ins-title{font-size:17px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:10px;transition:color .25s}
 .ins-card:not(:first-child) .ins-title{font-size:14px}
-.ins-excerpt{font-size:16px;color:#8C9399;line-height:1.68;transition:color .25s;font-weight:400}
+.ins-excerpt{font-size:16px;color:#8C9399;line-height:1.68;transition:color .25s;font-weight:500}
 .ins-card:not(:first-child) .ins-excerpt{display:none}
 
 /* ─── LEADERSHIP ─────────────────────────── */
@@ -709,7 +701,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .careers-bg .sec-label-line{background:var(--navy)}
 .careers-bg .sec-underline{background:#FFE300}
 .careers-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
-.careers-text p{font-size:18px;font-weight:400;color:#8C9399;line-height:1.8;margin-bottom:22px}
+.careers-text p{font-size:18px;font-weight:500;color:#8C9399;line-height:1.8;margin-bottom:22px}
 .jobs{display:flex;flex-direction:column;gap:10px}
 /* Dark grey frames — v3 */
 .job{background:#8C9399;border:2px solid #8C9399;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:box-shadow .25s,transform .25s,background .25s;cursor:pointer}
@@ -731,9 +723,9 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .jd-body{padding:36px 40px}
 .jd-section{margin-bottom:28px}
 .jd-section h4{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--navy);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid #FFE300;display:inline-block}
-.jd-section p{font-size:14px;color:#606566;line-height:1.75;margin-bottom:10px;font-weight:400}
+.jd-section p{font-size:14px;color:#606566;line-height:1.75;margin-bottom:10px;font-weight:600}
 .jd-section ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
-.jd-section ul li{font-size:14px;color:#606566;line-height:1.6;padding-left:18px;position:relative;font-weight:400}
+.jd-section ul li{font-size:14px;color:#606566;line-height:1.6;padding-left:18px;position:relative;font-weight:600}
 .jd-section ul li::before{content:'—';position:absolute;left:0;color:var(--navy);font-size:12px}
 /* CV Upload / Apply Box */
 .jd-apply-box{background:#F5F6F8;border-top:3px solid #FFE300;padding:0}
@@ -773,7 +765,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .rfq-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:start}
 .rfq-info h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--navy);margin-top:26px;margin-bottom:7px}
 .rfq-info h4:first-of-type{margin-top:0}
-.rfq-info p{font-size:16px;color:#8C9399;line-height:1.75;font-weight:400}
+.rfq-info p{font-size:16px;color:#8C9399;line-height:1.75;font-weight:500}
 .rfq-hotline{padding-top:20px;border-top:2px solid #D9DEE2;display:flex;align-items:center;gap:10px;flex-wrap:nowrap}
 .rfq-hotline-lbl{font-size:20px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#8C9399}
 .rfq-hotline-num{font-size:30px;font-weight:700;color:#2A5E97;letter-spacing:.5px}
@@ -851,7 +843,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
 .cf-result-range{font-size:16px;color:#F5C518;font-weight:700;margin-bottom:20px}
 .cf-result-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
 .cf-tag{background:rgba(255,255,255,.12);color:#D9DEE2;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px}
-.cf-result-note{font-size:16px;color:rgba(255,255,255,.65);line-height:1.6;border-top:1px solid rgba(255,255,255,.12);padding-top:16px;font-weight:400}
+.cf-result-note{font-size:16px;color:rgba(255,255,255,.65);line-height:1.6;border-top:1px solid rgba(255,255,255,.12);padding-top:16px;font-weight:700}
 
 /* ─── GCC MAP ─────────────────────────────── */
 .gcc-map-bg{background:var(--light)}
@@ -924,6 +916,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
   .hero-stats{gap:28px;flex-wrap:wrap}
   .hstat-num{font-size:30px}
   .services-grid{grid-template-columns:repeat(2,1fr)}
+  .fleet-grid{grid-template-columns:repeat(2,1fr)}
   .mkt-grid{grid-template-columns:repeat(3,1fr)}
   .countries-grid{grid-template-columns:repeat(2,1fr)}
   .proj-grid{grid-template-columns:repeat(2,1fr)}
@@ -970,11 +963,8 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
   .hstat-label{font-size:9px}
   .hero-eyebrow-text{font-size:11px;letter-spacing:2px}
   .services-grid{grid-template-columns:1fr}
-  .fleet-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-  .fleet-row,.fleet-row.reverse{flex-direction:column}
-  .fleet-row-body{padding:12px 12px 14px}
-  .fleet-row-body h3{font-size:12px}
-  .fleet-row-body p{font-size:11px}
+  .fleet-grid{grid-template-columns:repeat(2,1fr)}
+  .fleet-cell{aspect-ratio:1}
   .mkt-grid{grid-template-columns:repeat(2,1fr)}
   .countries-grid{grid-template-columns:1fr}
   .country-card{height:220px}
@@ -1044,6 +1034,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
   .hero-content h1{font-size:24px}
   .hero-stats{gap:16px}
   .hstat-num{font-size:22px}
+  .fleet-grid{grid-template-columns:1fr}
   .mkt-grid{grid-template-columns:1fr}
   .leader-grid{grid-template-columns:1fr}
   .client-cell{width:50%;padding:16px 10px}
@@ -1087,7 +1078,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
 <!-- ═══ NAV ════════════════════════════════ -->
 <nav>
   <div class="nav-inner">
-    <a href="#hero"><img src="assets/logo-colored.png" alt="Sarens Nass Middle East" style="height:50px;width:auto"></a>
+    <a href="#hero"><img src="https://a.storyblok.com/f/268200/429x174/89fed629ab/colored_logo.png" alt="Sarens Nass Middle East" style="height:50px;width:auto"></a>
     <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -1157,7 +1148,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
       <div class="hero-eyebrow-line"></div>
       <div class="hero-eyebrow-text">Heavy Lift · Shift · Transport — GCC</div>
     </div>
-    <h1 class="hero-content motto-on-dark" id="hero-h1">Your<br>Lift, Shift &amp; Transport<br>Experts</h1>
+    <h1 class="hero-content motto-on-dark" id="hero-h1">Your<br><em>Lift, Shift &amp; Transport</em><br>Experts</h1>
     <p class="hero-sub" id="hero-sub">We are the Middle East's trusted choice for engineered heavy lifting — combining proven international expertise with local experience, culture, and knowledge across Bahrain, Saudi Arabia, UAE, Qatar, Kuwait, and Oman.</p>
   </div>
 </section>
@@ -1199,27 +1190,27 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
     <div class="sec-underline"></div>
     <div class="services-grid">
       <div class="svc-card">
-        <img src="assets/heavy-lift-solutions.png" alt="SNME engineered heavy lift solutions — all-terrain and crawler crane operations across the GCC" loading="lazy" width="412" height="300">
+        <img src="https://a.storyblok.com/f/268200/412x300/ea145e3e6c/heavy_lifts_solutions.png/m/412x300/smart" alt="SNME engineered heavy lift solutions — all-terrain and crawler crane operations across the GCC" loading="lazy" width="412" height="300">
         <div class="svc-body"><h3>Heavy Lift Solutions</h3><p>At the forefront of engineering, SNME's technical solutions make your vision a reality—optimising productivity and minimising downtime.</p><a href="#svc-detail-heavy" onclick="openSvcDetail('heavy');return false;" class="svc-link" aria-label="Read more about SNME Heavy Lift Solutions">Read More</a></div>
       </div>
       <div class="svc-card">
-        <img src="assets/crane-rental.jpg" alt="SNME crane rental services — the largest heavy lifting fleet in the GCC: Bahrain, KSA, UAE, Qatar" loading="lazy" width="412" height="300">
+        <img src="https://a.storyblok.com/f/268200/4614x3344/e2f7ba0641/img_1467-2-copy.jpg/m/412x300/smart" alt="SNME crane rental services — the largest heavy lifting fleet in the GCC: Bahrain, KSA, UAE, Qatar" loading="lazy" width="412" height="300">
         <div class="svc-body"><h3>Crane Rental Services</h3><p>Access the largest heavy lifting fleet in the region—any time, anywhere.</p><a href="#svc-detail-rental" onclick="openSvcDetail('rental');return false;" class="svc-link" aria-label="Read more about SNME Crane Rental Services">Read More</a></div>
       </div>
       <div class="svc-card">
-        <img src="assets/marine-services.png" alt="SNME marine and stevedoring services — professional offshore and port cargo handling in the Middle East" loading="lazy" width="412" height="300">
+        <img src="https://a.storyblok.com/f/268200/412x300/bb7dfbbd3e/stevedoring.png/m/412x300/smart" alt="SNME marine and stevedoring services — professional offshore and port cargo handling in the Middle East" loading="lazy" width="412" height="300">
         <div class="svc-body"><h3>Marine Services</h3><p>Leader in professional stevedoring services, from conventional loading and grab discharge to efficient handling of general cargo vessels.</p><a href="#svc-detail-marine" onclick="openSvcDetail('marine');return false;" class="svc-link" aria-label="Read more about SNME Marine Services">Read More</a></div>
       </div>
       <div class="svc-card">
-        <img src="assets/rig-moves.png" alt="Rig Moves" loading="lazy" decoding="async">
+        <img src="https://a.storyblok.com/f/268200/412x300/16660c3460/rig_moves.png/m/412x300/smart" alt="Rig Moves" loading="lazy" decoding="async">
         <div class="svc-body"><h3>Rig Moves Services</h3><p>Execute precise and technical oil rig moves in record time—optimising both speed and safety.</p><a href="#svc-detail-rig" onclick="openSvcDetail('rig');return false;" class="svc-link">Read More</a></div>
       </div>
       <div class="svc-card">
-        <img src="assets/shutdown-services.png" alt="Shutdown" loading="lazy" decoding="async">
+        <img src="https://a.storyblok.com/f/268200/412x300/18aa50156b/shutdown_services.png/m/412x300/smart" alt="Shutdown" loading="lazy" decoding="async">
         <div class="svc-body"><h3>Shutdown Services</h3><p>SNME's efficient shutdown services prioritise speed without compromising safety.</p><a href="#svc-detail-shutdown" onclick="openSvcDetail('shutdown');return false;" class="svc-link">Read More</a></div>
       </div>
       <div class="svc-card">
-        <img src="assets/special-projects.png" alt="Material Handling" loading="lazy" decoding="async">
+        <img src="https://a.storyblok.com/f/268200/412x300/32058f1dc7/material_handling.png/m/412x300/smart" alt="Material Handling" loading="lazy" decoding="async">
         <div class="svc-body"><h3>Material Handling</h3><p>Optimise operations with material handling solutions for every warehousing challenge.</p><a href="#svc-detail-material" onclick="openSvcDetail('material');return false;" class="svc-link">Read More</a></div>
       </div>
     </div>
@@ -1234,79 +1225,14 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
     <h2 class="sec-title"><span style="color:#2A5E97">Our</span> <span style="color:#8C9399">Fleet</span></h2>
     <div class="sec-underline"></div>
     <div class="fleet-grid">
-
-      <div class="fleet-row">
-        <div class="fleet-row-img"><img src="assets/sarens-nass-mobile-crane-bahrain.jpg" alt="SNME Liebherr all-terrain mobile crane at Bahrain International Circuit — Sarens Nass branded heavy lift fleet across the GCC" loading="lazy" width="1200" height="900"></div>
-        <div class="fleet-row-body">
-          <h3>Mobile Cranes</h3>
-          <p>High-capacity all-terrain and rough-terrain hydraulic telescopic cranes — same-day mobilisation across Bahrain, KSA, UAE, Qatar, Kuwait and Oman.</p>
-          <a href="#fleet-detail-mobile" onclick="openFleetDetail('mobile');return false;" class="fleet-link" aria-label="Read more about SNME Mobile Cranes">Read More</a>
-        </div>
-      </div>
-
-      <div class="fleet-row reverse">
-        <div class="fleet-row-img"><img src="assets/crawler-cranes.png" alt="SNME lattice boom crawler cranes — LR and CC series for heavy industrial lifts in Saudi Arabia and UAE" loading="lazy" width="413" height="300"></div>
-        <div class="fleet-row-body">
-          <h3>Crawler Cranes</h3>
-          <p>Heavy-duty lattice boom crawler cranes for refinery, petrochemical and infrastructure lifts — engineered from feasibility study to executed lift.</p>
-          <a href="#fleet-detail-crawler" onclick="openFleetDetail('crawler');return false;" class="fleet-link" aria-label="Read more about SNME Crawler Cranes">Read More</a>
-        </div>
-      </div>
-
-      <div class="fleet-row">
-        <div class="fleet-row-img"><img src="assets/axles-spmts.jpg" alt="SNME Self-Propelled Modular Transporters — Goldhofer and Scheuerle axle lines for heavy module transport in the Middle East" loading="lazy" width="1400" height="847"></div>
-        <div class="fleet-row-body">
-          <h3>Axles / SPMTs</h3>
-          <p>Self-Propelled Modular Transporters for petrochemical modules, offshore topsides and bridge sections — heavy-load transport across the GCC.</p>
-          <a href="#fleet-detail-spmt" onclick="openFleetDetail('spmt');return false;" class="fleet-link" aria-label="Read more about SNME SPMTs">Read More</a>
-        </div>
-      </div>
-
-      <div class="fleet-row reverse">
-        <div class="fleet-row-img"><img src="assets/forklifts.png" alt="SNME forklift fleet — heavy-duty material handling equipment for industrial sites across Bahrain and the GCC" loading="lazy" width="412" height="300"></div>
-        <div class="fleet-row-body">
-          <h3>Forklift &amp; Warehousing Equipment</h3>
-          <p>Forklifts, reach stackers, VNA and Aisle Masters — electric, LPG, dual-fuel and diesel — for full warehouse, port and indoor logistics operations.</p>
-          <a href="#fleet-detail-forklift" onclick="openFleetDetail('forklift');return false;" class="fleet-link" aria-label="Read more about SNME Forklifts and Warehousing Equipment">Read More</a>
-        </div>
-      </div>
-
-      <div class="fleet-row">
-        <div class="fleet-row-img"><img src="assets/loaders.jpg" alt="SNME wheeled loaders and material handling equipment for port and industrial operations in the GCC" loading="lazy" width="1400" height="934"></div>
-        <div class="fleet-row-body">
-          <h3>Loaders</h3>
-          <p>Wheel loaders and pipe handlers modified for port, construction and heavy industrial operations — from quarry rock to large-diameter pipe.</p>
-          <a href="#fleet-detail-loaders" onclick="openFleetDetail('loaders');return false;" class="fleet-link" aria-label="Read more about SNME Loaders">Read More</a>
-        </div>
-      </div>
-
-      <div class="fleet-row reverse">
-        <div class="fleet-row-img"><img src="assets/power-sweepers.jpg" alt="SNME power sweepers and support equipment for site maintenance at GCC industrial facilities" loading="lazy" width="900" height="666"></div>
-        <div class="fleet-row-body">
-          <h3>Power Sweepers</h3>
-          <p>Mechanical and vacuum sweepers on rental for airports, sea ports, industrial sites and construction projects — keeping critical operations clean and compliant.</p>
-          <a href="#fleet-detail-sweepers" onclick="openFleetDetail('sweepers');return false;" class="fleet-link" aria-label="Read more about SNME Power Sweepers">Read More</a>
-        </div>
-      </div>
-
-      <div class="fleet-row">
-        <div class="fleet-row-img"><img src="assets/manlifts.jpg" alt="SNME manlift fleet — boom lifts and scissor lifts for high-access industrial work across the GCC" loading="lazy" width="764" height="598" decoding="async"></div>
-        <div class="fleet-row-body">
-          <h3>Manlifts</h3>
-          <p>Articulated and telescopic boom lifts with working heights to 43m — indoor, outdoor and rough-terrain configurations for shutdowns, plant maintenance and construction.</p>
-          <a href="#fleet-detail-manlifts" onclick="openFleetDetail('manlifts');return false;" class="fleet-link" aria-label="Read more about SNME Manlifts">Read More</a>
-        </div>
-      </div>
-
-      <div class="fleet-row reverse">
-        <div class="fleet-row-img"><img src="assets/trucks.jpg" alt="SNME heavy haulage trucks — prime movers and trailers for engineered transport across the Middle East" loading="lazy" width="1400" height="933" decoding="async"></div>
-        <div class="fleet-row-body">
-          <h3>Trucks &amp; Trailers</h3>
-          <p>A large fleet of trucks, flatbeds, low-beds and hydraulic axles — single-source heavy transport from fabrication yard to project site.</p>
-          <a href="#fleet-detail-trucks" onclick="openFleetDetail('trucks');return false;" class="fleet-link" aria-label="Read more about SNME Trucks and Trailers">Read More</a>
-        </div>
-      </div>
-
+      <div class="fleet-cell"><img src="https://a.storyblok.com/f/268200/418x300/17a4cf1918/mobile_cranes.png" alt="SNME all-terrain mobile cranes — LTM series up to 250T, deployed across GCC oil and gas projects" loading="lazy" width="418" height="300"><div class="fleet-cell-overlay"></div><h3>Mobile Cranes</h3></div>
+      <div class="fleet-cell"><img src="https://a.storyblok.com/f/268200/413x300/c7f249f0f4/crawler_cranes.png" alt="SNME lattice boom crawler cranes — LR and CC series up to 1,500T for heavy industrial lifts in Saudi Arabia and UAE" loading="lazy" width="413" height="300"><div class="fleet-cell-overlay"></div><h3>Crawler Cranes</h3></div>
+      <div class="fleet-cell"><img src="https://a.storyblok.com/f/268200/3633x2197/ffc3459907/axles.jpg" alt="SNME Self-Propelled Modular Transporters (SPMT) — Goldhofer and Scheuerle axle lines for heavy module transport in the Middle East" loading="lazy" width="413" height="300"><div class="fleet-cell-overlay"></div><h3>Axles / SPMT's</h3></div>
+      <div class="fleet-cell"><img src="assets/forklifts.webp" alt="SNME forklift fleet — heavy-duty material handling equipment for industrial sites across Bahrain and GCC" loading="lazy" width="767" height="772"><div class="fleet-cell-overlay"></div><h3>Forklifts</h3></div>
+      <div class="fleet-cell"><img src="assets/loaders.webp" alt="SNME wheeled loaders and material handling equipment for port and industrial operations in the GCC" loading="lazy" width="1200" height="1177"><div class="fleet-cell-overlay"></div><h3>Loaders</h3></div>
+      <div class="fleet-cell"><img src="assets/power-sweepers.webp" alt="SNME power sweepers and support equipment for site maintenance at GCC industrial facilities" loading="lazy" width="853" height="505"><div class="fleet-cell-overlay"></div><h3>Power Sweepers</h3></div>
+      <div class="fleet-cell"><img src="https://a.storyblok.com/f/268200/764x598/facabaf8fc/manlift.jpg" alt="SNME manlift fleet — boom lifts and scissor lifts for high-access industrial work across the GCC" loading="lazy" decoding="async"><div class="fleet-cell-overlay"></div><h3>Manlifts</h3></div>
+      <div class="fleet-cell"><img src="https://a.storyblok.com/f/268200/5370x3580/c61bfcb30a/img_0267-2-dark.jpg" alt="SNME heavy haulage trucks — prime movers and trailers for engineered transport across the Middle East" loading="lazy" decoding="async"><div class="fleet-cell-overlay"></div><h3>Trucks</h3></div>
     </div>
 
   </div>
@@ -1359,39 +1285,10 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
         <div class="cf-field">
           <label class="cf-label">Ground Type</label>
           <select id="cfSite" class="cf-select" onchange="updateCraneFinder()">
-            <option value="Loose">Loose Sand</option>
-            <option value="compacted">Compacted </option>
-            <option value="concrete">Concrete </option>
-            <option value="asphalt">Asphalt </option>
-          </select>
-        </div>
-        <div class="cf-field">
-          <label class="cf-label">Nature of the Job</label>
-          <textarea id="cfNature" class="cf-input" rows="2" placeholder="e.g. lifting two 80T heat exchangers onto a refinery skid" style="width:100%;font-family:inherit;resize:vertical;min-height:60px;padding:10px"></textarea>
-        </div>
-        <div class="cf-field">
-          <label class="cf-label">Duration of the Job</label>
-          <select id="cfDuration" class="cf-select">
-            <option value="">Select duration…</option>
-            <option value="<1d">Less than 1 day</option>
-            <option value="1d-1w">1 day to 1 week</option>
-            <option value="1w-1m">1 week to 1 month</option>
-            <option value="1m-3m">1 to 3 months</option>
-            <option value="3m-6m">3 to 6 months</option>
-            <option value="6m-1y">6 months to 1 year</option>
-            <option value=">1y">More than 1 year</option>
-          </select>
-        </div>
-        <div class="cf-field">
-          <label class="cf-label">Site Restrictions</label>
-          <select id="cfRestrictions" class="cf-select">
-            <option value="">Select…</option>
-            <option value="none">None (open access)</option>
-            <option value="restricted">Restricted access (narrow gates, low clearance)</option>
-            <option value="live-plant">Live plant (operational facility)</option>
-            <option value="offshore">Offshore / marine</option>
-            <option value="urban">Confined urban site</option>
-            <option value="hazardous">Hazardous area (ATEX zone)</option>
+            <option value="loose">Sand</option>
+            <option value="compacted">Compacted</option>
+            <option value="concrete">Concrete</option>
+            <option value="asphalt">Asphalt</option>
           </select>
         </div>
         <div class="rfq-hotline" style="margin-top:8px;align-items:center">
@@ -1410,7 +1307,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
           <span class="cf-tag">GCC Fleet</span>
         </div>
         <div class="cf-result-note" id="cfNote">Suitable for open sites with standard ground bearing. Our engineers will verify with a formal lift study.</div>
-        <a href="#rfq" class="btn-on-dark" style="margin-top:20px" onclick="prefillRFQFromSelector(event)">Request A Lift Study →</a>
+        <a href="#rfq" class="btn-on-dark" style="margin-top:20px">Request A Lift Study →</a>
       </div>
     </div>
   </div>
@@ -1423,15 +1320,26 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
     <h2 class="sec-title"><span style="color:#2A5E97">Market</span> <span style="color:#8C9399">Segments</span></h2>
     <div class="sec-underline"></div>
     <div class="mkt-grid">
-      <div class="mkt-item"><svg width="40" height="40" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:40px;height:40px;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><path d="M5 31h26"/><path d="M14 31 19 12M24 31 19 12"/><path d="M15.7 26h6.6"/><path d="M15 31 22.3 26M24 31 15.7 26"/><path d="M5 9 30 15.5"/><path d="M6.6 8.7C3.8 8.2 2.4 10.8 3 14"/><path d="M3.3 13.6V22"/><path d="M2.1 22h4.4"/><path d="M30 15.5 30.4 23"/><circle cx="30.2" cy="24.4" r="2.1"/></svg><h3>Oil &amp; Gas</h3></div>
-      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="6.5" r="2.5"/><path d="M18 9v21"/><path d="M12.5 13.5h11"/><path d="M7 23a11 11 0 0 0 22 0"/><path d="M7 23l-2.5-1.5M7 23l.5 3M29 23l2.5-1.5M29 23l-.5 3"/></svg><h3>Marine</h3></div>
-      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M4 26h28"/><path d="M12 26V11M24 26V11"/><path d="M12 11 7 26M12 11l5 15M24 11l-5 15M24 11l5 15"/><path d="M4 26v3M32 26v3"/></svg><h3>Infrastructure</h3></div>
-      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="9" y="5" width="18" height="22" rx="3"/><rect x="12.5" y="9" width="11" height="7" rx="1"/><circle cx="14" cy="21" r="1.3"/><circle cx="22" cy="21" r="1.3"/><path d="M8 31h20M13 27l-2 4M23 27l2 4"/></svg><h3>Rail</h3></div>
-      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M12 31c0-7 2-10 2-15M24 31c0-7-2-10-2-15"/><path d="M13.5 16h9"/><path d="M11 31h14"/><path d="M16 6c-1 2-3 4-3 4M20 6c1 2 3 4 3 4"/></svg><h3>Power Plants</h3></div>
-      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M13 31V7"/><path d="M10 7 13 3l3 4"/><path d="M7 7h23"/><path d="M26 7v6"/><path d="M24 13h4l-2 3z"/><path d="M9.5 31h7L13 24z"/></svg><h3>Construction</h3></div>
-      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M5 31V15l13-8 13 8v16"/><path d="M5 31h26"/><rect x="13" y="20" width="10" height="11" rx="1"/><path d="M13 24h10M13 27.5h10"/></svg><h3>Smart Warehousing</h3></div>
-      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="3.2"/><circle cx="7" cy="8" r="2.6"/><circle cx="29" cy="8" r="2.6"/><circle cx="18" cy="30" r="2.6"/><path d="M15.6 15.8 9 9.8M20.4 15.8 27 9.8M18 21.2v6"/></svg><h3>Logistics Network</h3></div>
-      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M15 31h6"/><path d="M18 31V17"/><circle cx="18" cy="15" r="1.8"/><path d="M18 13V4M19.4 16.2 27.5 21M16.6 16.2 8.5 21"/></svg><h3>Wind Power</h3></div>
+      <div class="mkt-item"><img src="https://a.storyblok.com/f/268200/34x34/2c5a2a44b2/oil_drum.png" alt="Oil" loading="lazy" decoding="async"><h3>Oil &amp; Gas</h3></div>
+      <div class="mkt-item"><img src="https://a.storyblok.com/f/268200/51x50/4e89f7ff67/flight.png" alt="Aviation" loading="lazy" decoding="async"><h3>Airports</h3></div>
+      <div class="mkt-item"><img src="https://a.storyblok.com/f/268200/50x50/5bb8900bc0/boat.png" alt="Marine" loading="lazy" decoding="async"><h3>Marine</h3></div>
+      <div class="mkt-item"><img src="https://a.storyblok.com/f/268200/51x50/a1c89546fa/infrastructure.png" alt="Infra" loading="lazy" decoding="async"><h3>Infrastructure</h3></div>
+      <div class="mkt-item"><img src="https://a.storyblok.com/f/268200/50x50/ebf2d2669e/petrochemical.png" alt="Petro" loading="lazy" decoding="async"><h3>Petrochemical</h3></div>
+      <div class="mkt-item"><img src="https://a.storyblok.com/f/268200/51x50/c2518aaab9/railway_station.png" alt="Rail" loading="lazy" decoding="async"><h3>Rail</h3></div>
+      <div class="mkt-item"><img src="https://a.storyblok.com/f/268200/50x50/093663b9cd/power_plant.png" alt="Power" loading="lazy" decoding="async"><h3>Power Plants</h3></div>
+      <div class="mkt-item"><img src="https://a.storyblok.com/f/268200/51x50/22c3d42879/construction.png" alt="Construction" loading="lazy" decoding="async"><h3>Construction</h3></div>
+      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;transition:filter .25s ease"><path d="M4 28V14l14-8 14 8v14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><rect x="13" y="18" width="10" height="10" rx="1" stroke="currentColor" stroke-width="2"></rect><path d="M13 22h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><line x1="18" y1="18" x2="18" y2="28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line></svg><h3>Smart Warehousing</h3></div>
+      <div class="mkt-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;transition:filter .25s ease"><circle cx="8" cy="10" r="3" stroke="currentColor" stroke-width="2"></circle><circle cx="28" cy="10" r="3" stroke="currentColor" stroke-width="2"></circle><circle cx="18" cy="28" r="3" stroke="currentColor" stroke-width="2"></circle><path d="M11 10h14M9.5 12.5L16.5 26M26.5 12.5L19.5 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><h3>Logistics Network</h3></div>
+      <div class="mkt-item"><svg width="40" height="44" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;transition:filter .25s ease">
+  <path d="M18 22 L16 40 L24 40 L22 22Z" fill="currentColor"></path>
+  <path d="M14 40 L17 40 L15.5 43Z" fill="currentColor"></path>
+  <path d="M26 40 L23 40 L24.5 43Z" fill="currentColor"></path>
+  <circle cx="20" cy="20" r="4" fill="currentColor"></circle>
+  <circle cx="20" cy="20" r="1.8" fill="white"></circle>
+  <path d="M18.5 17 C17 12 14 6 11 2 C13 6 16 13 18.5 18Z" fill="currentColor"></path>
+  <path d="M23 21 C27 22 32 24 37 26 C33 23 27 21 22 20Z" fill="currentColor"></path>
+  <path d="M17 22 C13 24 8 27 3 29 C7 26 13 23 18 21Z" fill="currentColor"></path>
+</svg><h3>Wind Power</h3></div>
     </div>
   </div>
 </section>
@@ -1480,7 +1388,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
   <div class="logo-ribbon-label"><span class="logo-ribbon-label-line"></span><span class="logo-ribbon-label-text">Our Clients</span><span class="logo-ribbon-label-line"></span></div>
 <div class="logo-ribbon">
   <div class="logo-ribbon-track">
-    <div class="logo-ribbon-item"><img src="assets/aramco-color.jpg" alt="Saudi Aramco" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/logos/qatar-energy.png" alt="QatarEnergy" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/logos/adnoc.svg" alt="ADNOC" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/logos/qatar-petroleum.png" alt="Qatar Petroleum" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/larsen-toubro-color.png" alt="L&amp;T" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/tecnicas-reunidas-color.png" alt="Técnicas Reunidas" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/samsung-ct-color.png" alt="Samsung C&amp;T" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/sepco-iii-color.png" alt="SEPCO III" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/ensign-color.png" alt="Ensign" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/expo-2020-color.png" alt="Expo 2020" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/hyundai-color.png" alt="Hyundai E&amp;C" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/olayan-descon-color.jpg" alt="Olayan Descon" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/powerchina-sepco-color.png" alt="PowerChina" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/sabic-color.png" alt="SABIC" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/schlumberger-color.png" alt="SLB" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/282502/2517x567/2bfbfba4dd/six-construct-ok.png/m/300x0/filters:quality(80)" alt="Six Construct" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/tadano-color.png" alt="Tadano" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/282502/1633x567/7e2c08174e/besix-ok.png/m/300x0/filters:quality(80)" alt="BESIX" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://www.bapcoenergies.com/assets/images/logo-sm.svg" alt="Bapco Energies" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/sany.png" alt="SANY" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/aramco-color.jpg" alt="Saudi Aramco" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/logos/qatar-energy.png" alt="QatarEnergy" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/logos/adnoc.svg" alt="ADNOC" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/logos/qatar-petroleum.png" alt="Qatar Petroleum" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/larsen-toubro-color.png" alt="L&amp;T" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/tecnicas-reunidas-color.png" alt="Técnicas Reunidas" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/samsung-ct-color.png" alt="Samsung C&amp;T" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/sepco-iii-color.png" alt="SEPCO III" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/ensign-color.png" alt="Ensign" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/expo-2020-color.png" alt="Expo 2020" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/hyundai-color.png" alt="Hyundai E&amp;C" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/olayan-descon-color.jpg" alt="Olayan Descon" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/powerchina-sepco-color.png" alt="PowerChina" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/sabic-color.png" alt="SABIC" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/schlumberger-color.png" alt="SLB" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/282502/2517x567/2bfbfba4dd/six-construct-ok.png/m/300x0/filters:quality(80)" alt="Six Construct" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/tadano-color.png" alt="Tadano" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/282502/1633x567/7e2c08174e/besix-ok.png/m/300x0/filters:quality(80)" alt="BESIX" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://www.bapcoenergies.com/assets/images/logo-sm.svg" alt="Bapco Energies" loading="lazy" decoding="async"></div>
+    <div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/598x400/31fc4584d4/aramco-copy.jpg" alt="Saudi Aramco" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/logos/qatar-energy.png" alt="QatarEnergy" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/logos/adnoc.svg" alt="ADNOC" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/logos/qatar-petroleum.png" alt="Qatar Petroleum" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/400x400/04918e727b/1200px-larsen-toubro_logo-copy.png" alt="L&amp;T" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/1200x680/03512fe51c/1200px-tecnicas_reunidas_logo-svg.png" alt="Técnicas Reunidas" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/400x400/83c2ae77ad/2560px-samsung_c-t_logo-svg-copy.png" alt="Samsung C&amp;T" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/549x400/40a5e34248/187012-copy-2.png" alt="SEPCO III" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/400x400/b135fe3f49/ensign_logo-copy.png" alt="Ensign" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/740x400/948c4d5692/expo_2020-copy.png" alt="Expo 2020" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/400x400/461a42c17b/hyundai-engineering-2-copy.png" alt="Hyundai E&amp;C" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/684x400/17551e3b9d/olayan-descon-careers-copy.jpg" alt="Olayan Descon" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/400x400/5ebd38b8db/powerchina-sepco-copy.png" alt="PowerChina" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/533x400/f4c490f3cb/sabic_logo_rgb_png_tcm1010-2093-copy.png" alt="SABIC" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/533x400/d32a0bed84/schlumberger-logo-copy.png" alt="SLB" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/282502/2517x567/2bfbfba4dd/six-construct-ok.png/m/300x0/filters:quality(80)" alt="Six Construct" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/495x400/362a86c8ea/tadano-vector-logo-copy.png" alt="Tadano" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/282502/1633x567/7e2c08174e/besix-ok.png/m/300x0/filters:quality(80)" alt="BESIX" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://www.bapcoenergies.com/assets/images/logo-sm.svg" alt="Bapco Energies" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/598x400/31fc4584d4/aramco-copy.jpg" alt="Saudi Aramco" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/logos/qatar-energy.png" alt="QatarEnergy" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/logos/adnoc.svg" alt="ADNOC" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="assets/logos/qatar-petroleum.png" alt="Qatar Petroleum" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/400x400/04918e727b/1200px-larsen-toubro_logo-copy.png" alt="L&amp;T" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/1200x680/03512fe51c/1200px-tecnicas_reunidas_logo-svg.png" alt="Técnicas Reunidas" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/400x400/83c2ae77ad/2560px-samsung_c-t_logo-svg-copy.png" alt="Samsung C&amp;T" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/549x400/40a5e34248/187012-copy-2.png" alt="SEPCO III" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/400x400/b135fe3f49/ensign_logo-copy.png" alt="Ensign" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/740x400/948c4d5692/expo_2020-copy.png" alt="Expo 2020" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/400x400/461a42c17b/hyundai-engineering-2-copy.png" alt="Hyundai E&amp;C" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/684x400/17551e3b9d/olayan-descon-careers-copy.jpg" alt="Olayan Descon" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/400x400/5ebd38b8db/powerchina-sepco-copy.png" alt="PowerChina" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/533x400/f4c490f3cb/sabic_logo_rgb_png_tcm1010-2093-copy.png" alt="SABIC" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/533x400/d32a0bed84/schlumberger-logo-copy.png" alt="SLB" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/282502/2517x567/2bfbfba4dd/six-construct-ok.png/m/300x0/filters:quality(80)" alt="Six Construct" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/268200/495x400/362a86c8ea/tadano-vector-logo-copy.png" alt="Tadano" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://a.storyblok.com/f/282502/1633x567/7e2c08174e/besix-ok.png/m/300x0/filters:quality(80)" alt="BESIX" loading="lazy" decoding="async"></div><div class="logo-ribbon-item"><img src="https://www.bapcoenergies.com/assets/images/logo-sm.svg" alt="Bapco Energies" loading="lazy" decoding="async"></div>
   </div>
 </div>
 </div>
@@ -1541,7 +1449,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
     </div>
     <div class="proj-grid">
       <div class="proj-card" data-cat="og">
-        <div class="proj-img"><img src="assets/rig-moves.png" alt="SNME rig move operation for Bapco Energies — heavy lift and rig relocation in Bahrain oil and gas sector" loading="lazy" width="412" height="300"><div class="proj-tag">Oil &amp; Gas</div></div>
+        <div class="proj-img"><img src="https://a.storyblok.com/f/268200/412x300/16660c3460/rig_moves.png/m/412x300/smart" alt="SNME rig move operation for Bapco Energies — heavy lift and rig relocation in Bahrain oil and gas sector" loading="lazy" width="412" height="300"><div class="proj-tag">Oil &amp; Gas</div></div>
         <div class="proj-body">
           <div class="proj-client">Bapco Upstream · Bahrain</div>
           <div class="proj-title">Offshore Rig Relocation — Critical Lift Programme</div>
@@ -1567,7 +1475,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
         </div>
       </div>
       <div class="proj-card" data-cat="pc">
-        <div class="proj-img"><img src="assets/special-projects.png" alt="SABIC" loading="lazy" decoding="async"><div class="proj-tag">Petrochemical</div></div>
+        <div class="proj-img"><img src="https://a.storyblok.com/f/268200/412x300/32058f1dc7/material_handling.png/m/412x300/smart" alt="SABIC" loading="lazy" decoding="async"><div class="proj-tag">Petrochemical</div></div>
         <div class="proj-body">
           <div class="proj-client">SABIC · Jubail, Saudi Arabia</div>
           <div class="proj-title">Reactor Module Installation — Jubail Industrial City</div>
@@ -1591,7 +1499,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
         </div>
       </div>
       <div class="proj-card" data-cat="mr">
-        <div class="proj-img"><img src="assets/marine-services.png" alt="ADNOC" loading="lazy" decoding="async"><div class="proj-tag">Marine</div></div>
+        <div class="proj-img"><img src="https://a.storyblok.com/f/268200/412x300/bb7dfbbd3e/stevedoring.png/m/412x300/smart" alt="ADNOC" loading="lazy" decoding="async"><div class="proj-tag">Marine</div></div>
         <div class="proj-body">
           <div class="proj-client">ADNOC · Abu Dhabi, UAE</div>
           <div class="proj-title">Offshore Platform Topsides Marine Lift Operations</div>
@@ -1630,7 +1538,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
     </div>
     <div class="insights-grid">
       <div class="ins-card">
-        <div class="ins-img" style="background:#D9DEE2"><img src="assets/shutdown-services.png" alt="Bahrain Refinery Shutdown" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" loading="lazy" decoding="async"><div class="ins-cat">Project Announcement</div></div>
+        <div class="ins-img" style="background:#D9DEE2"><img src="https://a.storyblok.com/f/268200/412x300/18aa50156b/shutdown_services.png/m/412x300/smart" alt="Bahrain Refinery Shutdown" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" loading="lazy" decoding="async"><div class="ins-cat">Project Announcement</div></div>
         <div class="ins-body">
           <div class="ins-date">March 2025</div>
           <div class="ins-title">SNME Awarded Full-Scope Shutdown Package for Major Bahrain Refinery Turnaround</div>
@@ -1638,7 +1546,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
         </div>
       </div>
       <div class="ins-card">
-        <div class="ins-img" style="background:linear-gradient(135deg,#1a3a6b,#2A5E97)"><img src="assets/heavy-lift-solutions.png" alt="GCC Heavy Lift" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:.85" loading="lazy" decoding="async"><div class="ins-cat">Market Insight</div></div>
+        <div class="ins-img" style="background:linear-gradient(135deg,#1a3a6b,#2A5E97)"><img src="https://a.storyblok.com/f/268200/412x300/ea145e3e6c/heavy_lifts_solutions.png/m/412x300/smart" alt="GCC Heavy Lift" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:.85" loading="lazy" decoding="async"><div class="ins-cat">Market Insight</div></div>
         <div class="ins-body">
           <div class="ins-date">February 2025</div>
           <div class="ins-title">GCC Heavy Lift Demand: What 2025 Order Books Signal for the Region</div>
@@ -1670,23 +1578,23 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
     <p class="sec-desc" style="max-width:640px;margin-bottom:48px">SNME is governed by a joint board representing both founding partners — Nass Group of Bahrain and Sarens NV of Belgium — combining regional expertise with global heavy lift leadership.</p>
     <div class="leader-grid">
       <div class="leader-card">
-        <div class="leader-avatar"><img src="assets/sameer-nass.jpg" alt="Sameer Nass" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
+        <div class="leader-avatar"><img src="https://a.storyblok.com/f/268200/800x799/659a33c6f5/sameer_nass_bg.jpg" alt="Sameer Nass" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
         <div class="leader-name">Sameer Nass</div><div class="leader-title">Chairman</div>
       </div>
       <div class="leader-card">
-        <div class="leader-avatar"><img src="assets/sami-nass.jpg" alt="Sami Nass" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
+        <div class="leader-avatar"><img src="https://a.storyblok.com/f/268200/2525x2386/d43f295735/sami_nass_bg.jpg" alt="Sami Nass" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
         <div class="leader-name">Sami Nass</div><div class="leader-title">Managing Director &amp; Deputy Chairman</div>
       </div>
       <div class="leader-card">
-        <div class="leader-avatar"><img src="assets/ludo-sarens.jpg" alt="Ludo Sarens" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
+        <div class="leader-avatar"><img src="https://a.storyblok.com/f/268200/461x571/ea1d5f3b05/ludo_sarens_bg.jpg" alt="Ludo Sarens" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
         <div class="leader-name">Ludo Sarens</div><div class="leader-title">Vice President</div>
       </div>
       <div class="leader-card">
-        <div class="leader-avatar"><img src="assets/alhanoof-nass.jpg" alt="Alhanoof Nass" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
+        <div class="leader-avatar"><img src="https://a.storyblok.com/f/268200/4016x6016/f77419e8a4/alhanoof_nass_bg.jpg" alt="Alhanoof Nass" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
         <div class="leader-name">Alhanoof Nass</div><div class="leader-title">Regional Director</div>
       </div>
       <div class="leader-card">
-        <div class="leader-avatar"><img src="assets/wim-sarens.jpg" alt="Wim Sarens" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
+        <div class="leader-avatar"><img src="https://a.storyblok.com/f/268200/3071x4606/4532cfc7ac/wim_sarens_bg.png" alt="Wim Sarens" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"><div class="leader-avatar-fill"></div><div class="leader-bar"></div></div>
         <div class="leader-name">Wim Sarens</div><div class="leader-title">CEO</div>
       </div>
     </div>
@@ -1705,7 +1613,7 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
     <div class="sec-underline"></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:40px">
       <div>
-        <img src="assets/snme-team-photo.jpg" alt="The Sarens Nass Middle East team at the Bahrain yard, with branded Liebherr cranes in the background" style="width:100%;border-radius:4px;object-fit:cover;aspect-ratio:3/2" loading="lazy" decoding="async">
+        <img src="https://a.storyblok.com/f/268200/5215x2511/b9768984be/home_banner.png" alt="SNME Operations" style="width:100%;border-radius:4px;object-fit:cover;max-height:340px" loading="lazy" decoding="async">
       </div>
       <div>
         <p class="sec-desc" style="margin-bottom:28px">Established in 2003, Sarens Nass Middle East (SNME) is a joint venture between Bahrain-based Nass Group and Belgium-based Sarens NV. For decades, we have been at the forefront of engineering innovation, serving as the trusted reference for heavy lift and transport solutions across the Middle East and beyond.</p>
@@ -2014,11 +1922,11 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
       <div class="rfq-form">
         <h3>Project Enquiry Form</h3>
         <div class="frow">
-          <div class="fg"><label class="fl">First Name</label><input type="text" id="rfqFirstName" class="fi" placeholder="First Name"></div>
-          <div class="fg"><label class="fl">Last Name</label><input type="text" id="rfqLastName" class="fi" placeholder="Last Name"></div>
+          <div class="fg"><label class="fl">First Name</label><input type="text" id="rfqFirstName" class="fi" placeholder="Ahmed"></div>
+          <div class="fg"><label class="fl">Last Name</label><input type="text" id="rfqLastName" class="fi" placeholder="Al Mansoori"></div>
         </div>
         <div class="frow">
-          <div class="fg"><label class="fl">Company</label><input type="text" id="rfqCompany" class="fi" placeholder="Company"></div>
+          <div class="fg"><label class="fl">Company</label><input type="text" id="rfqCompany" class="fi" placeholder="Organisation"></div>
           <div class="fg"><label class="fl">Country</label>
             <select id="rfqCountry" class="fs"><option value="">Select Country</option><option>Bahrain</option><option>Saudi Arabia</option><option>UAE</option><option>Qatar</option><option>Kuwait</option><option>Oman</option></select>
           </div>
@@ -2047,11 +1955,11 @@ footer{background:#2A5E97;padding:60px 0 32px;border-top:3px solid #1e4a7a}
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo"><img src="assets/logo-white.png" alt="Sarens Nass Middle East — SNME Logo" loading="lazy" decoding="async"></div>
+        <div class="footer-logo"><img src="https://a.storyblok.com/f/268200/384x157/d5b8cdd815/logo_white.png" alt="Sarens Nass Middle East — SNME Logo" loading="lazy" decoding="async"></div>
         <div class="footer-tagline motto-on-dark">Your Lift, Shift and Transportation Experts</div>
         <div class="footer-certs">
-          <img src="assets/bsc-member.png" alt="BSC Member — British Safety Council" onerror="this.style.display='none'" loading="lazy" decoding="async">
-          <img src="assets/bureau-veritas.png" alt="Bureau Veritas Certified" onerror="this.style.display='none'" loading="lazy" decoding="async">
+          <img src="https://a.storyblok.com/f/268200/238x102/d14f87d7d4/bsc_member_logo.png" alt="BSC Member — British Safety Council" onerror="this.style.display='none'" loading="lazy" decoding="async">
+          <img src="https://a.storyblok.com/f/268200/239x111/489f5827a5/bv_logo.png" alt="Bureau Veritas Certified" onerror="this.style.display='none'" loading="lazy" decoding="async">
         </div>
         <div class="footer-social">
           <a href="https://www.linkedin.com/company/sarensnass" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
@@ -2244,12 +2152,12 @@ if (heroSection) heroObserver.observe(heroSection);
 
 /* ── Language switcher ── */
 const T={
-  en:{hero_h:'Your<br>Lift, Shift &amp; Transport<br>Experts',hero_s:'We are the Middle East\'s trusted choice for engineered heavy lifting — combining proven international expertise with local experience, culture, and knowledge across Bahrain, Saudi Arabia, UAE, Qatar, Kuwait, and Oman.'},
-  ar:{hero_h:'خبراء الرفع والنقل<br>والتحريك في الشرق الأوسط',hero_s:'نحن الخيار الموثوق به في الشرق الأوسط للرفع الثقيل الهندسي — نجمع بين الخبرة الدولية المثبتة والمعرفة المحلية في البحرين والسعودية والكويت وقطر وعُمان والإمارات.'},
-  zh:{hero_h:'您的专业吊装、移动<br>和运输专家',hero_s:'我们是中东地区工程重型吊装的首选合作伙伴，将国际专业知识与本地经验相结合，服务于巴林、沙特、科威特、卡塔尔、阿曼及阿联酋。'},
-  fr:{hero_h:'Vos Experts en Levage,<br>Déplacement et Transport',hero_s:'Nous sommes le choix de confiance du Moyen-Orient pour le levage industriel — alliant expertise internationale et connaissance locale au Bahreïn, en Arabie Saoudite, au Koweït, au Qatar, en Oman et aux Émirats.'},
-  de:{hero_h:'Ihre Experten für Heben,<br>Verschieben und Transport',hero_s:'Wir sind die vertrauenswürdige Wahl des Nahen Ostens für technisches Schwerlastheben — internationale Expertise verbunden mit lokaler Erfahrung in Bahrain, Saudi-Arabien, Kuwait, Katar, Oman und den VAE.'},
-  ko:{hero_h:'귀사의 리프팅, 이동 및<br>운송 전문가',hero_s:'저희는 중동 지역에서 신뢰받는 중량물 리프팅 전문 파트너입니다. 검증된 국제적 전문성과 바레인, 사우디아라비아, 쿠웨이트, 카타르, 오만, UAE에서의 풍부한 현지 경험을 결합하여 최상의 서비스를 제공합니다.'}
+  en:{hero_h:'Your<br><em>Lift, Shift &amp; Transport</em><br>Experts',hero_s:'We are the Middle East\'s trusted choice for engineered heavy lifting — combining proven international expertise with local experience, culture, and knowledge across Bahrain, Saudi Arabia, UAE, Qatar, Kuwait, and Oman.'},
+  ar:{hero_h:'خبراء الرفع والنقل<br><em>والتحريك في الشرق الأوسط</em>',hero_s:'نحن الخيار الموثوق به في الشرق الأوسط للرفع الثقيل الهندسي — نجمع بين الخبرة الدولية المثبتة والمعرفة المحلية في البحرين والسعودية والكويت وقطر وعُمان والإمارات.'},
+  zh:{hero_h:'您的专业吊装、移动<br><em>和运输专家</em>',hero_s:'我们是中东地区工程重型吊装的首选合作伙伴，将国际专业知识与本地经验相结合，服务于巴林、沙特、科威特、卡塔尔、阿曼及阿联酋。'},
+  fr:{hero_h:'Vos Experts en Levage,<br><em>Déplacement et Transport</em>',hero_s:'Nous sommes le choix de confiance du Moyen-Orient pour le levage industriel — alliant expertise internationale et connaissance locale au Bahreïn, en Arabie Saoudite, au Koweït, au Qatar, en Oman et aux Émirats.'},
+  de:{hero_h:'Ihre Experten für Heben,<br><em>Verschieben und Transport</em>',hero_s:'Wir sind die vertrauenswürdige Wahl des Nahen Ostens für technisches Schwerlastheben — internationale Expertise verbunden mit lokaler Erfahrung in Bahrain, Saudi-Arabien, Kuwait, Katar, Oman und den VAE.'},
+  ko:{hero_h:'귀사의 리프팅, 이동 및<br><em>운송 전문가</em>',hero_s:'저희는 중동 지역에서 신뢰받는 중량물 리프팅 전문 파트너입니다. 검증된 국제적 전문성과 바레인, 사우디아라비아, 쿠웨이트, 카타르, 오만, UAE에서의 풍부한 현지 경험을 결합하여 최상의 서비스를 제공합니다.'}
 };
 /* ═══════════════════════════════════════════════════════════════════════════
    MULTILINGUAL SEO META DATA
@@ -2454,74 +2362,6 @@ function updateCraneFinder(){
   var tEl=document.getElementById('cfTags');
   tEl.innerHTML=tags.map(t=>'<span class="cf-tag">'+t+'</span>').join('');
   document.getElementById('cfNote').textContent=note;
-}
-
-function prefillRFQFromSelector(ev){
-  // Read all 7 selector fields
-  var w=parseInt(document.getElementById('cfWeight').value);
-  var h=parseInt(document.getElementById('cfHeight').value);
-  var r=parseInt(document.getElementById('cfRadius').value);
-  var ground=document.getElementById('cfSite').value;
-  var nature=(document.getElementById('cfNature').value||'').trim();
-  var dur=document.getElementById('cfDuration');
-  var rest=document.getElementById('cfRestrictions');
-  var durTxt=dur.options[dur.selectedIndex]?dur.options[dur.selectedIndex].text:'';
-  var restTxt=rest.options[rest.selectedIndex]?rest.options[rest.selectedIndex].text:'';
-  var recName=(document.getElementById('cfName').textContent||'').trim();
-  var recRange=(document.getElementById('cfRange').textContent||'').trim();
-
-  // Build a concise scope summary for the "Estimated Load / Scope" field
-  var scopeBits=[];
-  if(w) scopeBits.push(w+'T load');
-  if(h) scopeBits.push(h+'m lift height');
-  if(r) scopeBits.push(r+'m radius');
-  if(durTxt && durTxt!=='Select duration…') scopeBits.push(durTxt.toLowerCase());
-  var scope=scopeBits.join(' · ');
-
-  // Build a detailed project description
-  var desc='';
-  if(nature) desc+='Nature of the job:\n'+nature+'\n\n';
-  desc+='Lift parameters:\n';
-  if(w) desc+='• Load weight: '+w+'T\n';
-  if(h) desc+='• Lift height: '+h+'m\n';
-  if(r) desc+='• Working radius: '+r+'m\n';
-  if(ground) desc+='• Ground type: '+ground.charAt(0).toUpperCase()+ground.slice(1)+'\n';
-  if(durTxt && durTxt!=='Select duration…') desc+='• Duration: '+durTxt+'\n';
-  if(restTxt && restTxt!=='Select…') desc+='• Site restrictions: '+restTxt+'\n';
-  if(recName) desc+='\nSNME selector recommendation: '+recName+(recRange?' ('+recRange+')':'')+'\n';
-
-  // Map duration to RFQ timeline dropdown
-  var rfqTimeline=document.getElementById('rfqTimeline');
-  var durVal=dur.value;
-  var timelineMap={'<1d':'Immediate (within 30 days)','1d-1w':'Immediate (within 30 days)','1w-1m':'Immediate (within 30 days)','1m-3m':'1–3 months','3m-6m':'3–6 months','6m-1y':'6+ months','>1y':'6+ months'};
-  if(timelineMap[durVal]){
-    for(var i=0;i<rfqTimeline.options.length;i++){
-      if(rfqTimeline.options[i].text===timelineMap[durVal]){ rfqTimeline.selectedIndex=i; break; }
-    }
-  }
-
-  // Default to "Heavy Lift & Cranes" service since this came from the lift calculator
-  var rfqService=document.getElementById('rfqService');
-  for(var j=0;j<rfqService.options.length;j++){
-    if(rfqService.options[j].text==='Heavy Lift & Cranes'){ rfqService.selectedIndex=j; break; }
-  }
-
-  // Fill the form
-  var scopeEl=document.getElementById('rfqScope');
-  var descEl=document.getElementById('rfqDescription');
-  if(scope) scopeEl.value=scope;
-  if(desc) descEl.value=desc;
-
-  // Highlight the prefilled fields briefly
-  var highlight=[scopeEl,descEl,rfqService,rfqTimeline];
-  highlight.forEach(function(el){
-    if(!el) return;
-    var prev=el.style.boxShadow;
-    el.style.transition='box-shadow .4s ease,background .4s ease';
-    el.style.boxShadow='0 0 0 2px #FFE300';
-    el.style.background='#FFFCE6';
-    setTimeout(function(){ el.style.boxShadow=prev||''; el.style.background=''; },2200);
-  });
 }
 </script>
 
@@ -2949,32 +2789,32 @@ var svcData = {
   heavy: {
     title: 'Heavy Lift Solutions',
     tag: 'Engineering Services',
-    body: '<img src="assets/heavy-lift-solutions.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">At the forefront of engineering, SNME\'s technical solutions make your vision a reality — optimising productivity and minimising downtime across the GCC\'s most demanding industrial projects.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Our engineering team prepares full lift studies, rigging plans, and load calculations for every project — from module installation at petrochemical plants to offshore platform topsides.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Capabilities</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Reactor lifts up to 3,000T<br>Module installation<br>Topsides & jackets<br>Wind turbine erection<br>Bridge beam placement</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Industries Served</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Oil &amp; Gas<br>Petrochemicals<br>Power Generation<br>Renewables<br>Infrastructure</div></div></div>'
+    body: '<img src="https://a.storyblok.com/f/268200/412x300/ea145e3e6c/heavy_lifts_solutions.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">At the forefront of engineering, SNME\'s technical solutions make your vision a reality — optimising productivity and minimising downtime across the GCC\'s most demanding industrial projects.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Our engineering team prepares full lift studies, rigging plans, and load calculations for every project — from module installation at petrochemical plants to offshore platform topsides.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Capabilities</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Reactor lifts up to 3,000T<br>Module installation<br>Topsides & jackets<br>Wind turbine erection<br>Bridge beam placement</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Industries Served</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Oil &amp; Gas<br>Petrochemicals<br>Power Generation<br>Renewables<br>Infrastructure</div></div></div>'
   },
   rental: {
     title: 'Crane Rental Services',
     tag: 'Fleet Rental',
-    body: '<img src="assets/crane-rental.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Access the largest heavy lifting fleet in the region — any time, anywhere. SNME operates a 4,000+ strong fleet across all six GCC markets, available for short and long-term rental with full operator and maintenance support.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">All equipment is maintained to the highest international standards with valid third-party inspection certifications.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Fleet Types</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">All-terrain cranes<br>Crawler cranes<br>Rough terrain cranes<br>City cranes<br>Tower cranes</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Capacity Range</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">10T to 3,200T<br>Bare rental available<br>Operated rental<br>Maintained rental<br>Long-term contracts</div></div></div>'
+    body: '<img src="https://a.storyblok.com/f/268200/4614x3344/e2f7ba0641/img_1467-2-copy.jpg/m/412x300/smart" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Access the largest heavy lifting fleet in the region — any time, anywhere. SNME operates a 4,000+ strong fleet across all six GCC markets, available for short and long-term rental with full operator and maintenance support.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">All equipment is maintained to the highest international standards with valid third-party inspection certifications.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Fleet Types</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">All-terrain cranes<br>Crawler cranes<br>Rough terrain cranes<br>City cranes<br>Tower cranes</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Capacity Range</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">10T to 3,200T<br>Bare rental available<br>Operated rental<br>Maintained rental<br>Long-term contracts</div></div></div>'
   },
   marine: {
     title: 'Marine Services',
     tag: 'Marine & Stevedoring',
-    body: '<img src="assets/marine-services.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Sarens Nass is a leader in professional stevedoring services — from conventional loading and grab discharge to the safe, efficient handling of general cargo vessels across GCC ports.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Our marine division operates across Bahrain, Kuwait, and Qatar with experienced teams and specialised port equipment.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Services</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Port stevedoring<br>Cargo handling<br>Vessel loading/discharge<br>Offshore lifts<br>Marine crane operations</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Ports Served</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Bahrain<br>Kuwait<br>Qatar<br>UAE<br>Saudi Arabia</div></div></div>'
+    body: '<img src="https://a.storyblok.com/f/268200/412x300/bb7dfbbd3e/stevedoring.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Sarens Nass is a leader in professional stevedoring services — from conventional loading and grab discharge to the safe, efficient handling of general cargo vessels across GCC ports.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Our marine division operates across Bahrain, Kuwait, and Qatar with experienced teams and specialised port equipment.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Services</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Port stevedoring<br>Cargo handling<br>Vessel loading/discharge<br>Offshore lifts<br>Marine crane operations</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Ports Served</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Bahrain<br>Kuwait<br>Qatar<br>UAE<br>Saudi Arabia</div></div></div>'
   },
   rig: {
     title: 'Rig Moves Services',
     tag: 'Drilling Support',
-    body: '<img src="assets/rig-moves.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Execute precise and technical oil rig moves in record time — optimising both speed and safety. SNME\'s experienced rig move teams have completed hundreds of successful rig relocations across the GCC.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Every rig move is planned with detailed method statements, equipment schedules, and HSE procedures to ensure zero downtime and maximum safety.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Capabilities</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Jack-up rig moves<br>Land rig relocations<br>Cantilever skidding<br>Skid base moves<br>Wellhead platform moves</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Key Clients</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Saudi Aramco<br>QatarEnergy<br>ADNOC<br>Ensign<br>KCA Deutag</div></div></div>'
+    body: '<img src="https://a.storyblok.com/f/268200/412x300/16660c3460/rig_moves.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Execute precise and technical oil rig moves in record time — optimising both speed and safety. SNME\'s experienced rig move teams have completed hundreds of successful rig relocations across the GCC.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Every rig move is planned with detailed method statements, equipment schedules, and HSE procedures to ensure zero downtime and maximum safety.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Capabilities</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Jack-up rig moves<br>Land rig relocations<br>Cantilever skidding<br>Skid base moves<br>Wellhead platform moves</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Key Clients</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Saudi Aramco<br>QatarEnergy<br>ADNOC<br>Ensign<br>KCA Deutag</div></div></div>'
   },
   shutdown: {
     title: 'Shutdown Services',
     tag: 'S&T Services',
-    body: '<img src="assets/shutdown-services.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">SNME\'s efficient shutdown and turnaround services prioritise speed without compromising safety. We mobilise rapidly with the right equipment and personnel to meet the tightest turnaround windows.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Our shutdown teams are experienced in oil refineries, LNG plants, petrochemical facilities, and power stations across the GCC.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Services</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Plant shutdowns<br>Turnaround support<br>Heat exchanger pulls<br>Vessel lifts<br>Catalyst handling</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Facilities Served</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Refineries<br>LNG plants<br>Petrochemicals<br>Power stations<br>Utilities</div></div></div>'
+    body: '<img src="https://a.storyblok.com/f/268200/412x300/18aa50156b/shutdown_services.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">SNME\'s efficient shutdown and turnaround services prioritise speed without compromising safety. We mobilise rapidly with the right equipment and personnel to meet the tightest turnaround windows.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Our shutdown teams are experienced in oil refineries, LNG plants, petrochemical facilities, and power stations across the GCC.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Services</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Plant shutdowns<br>Turnaround support<br>Heat exchanger pulls<br>Vessel lifts<br>Catalyst handling</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Facilities Served</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Refineries<br>LNG plants<br>Petrochemicals<br>Power stations<br>Utilities</div></div></div>'
   },
   material: {
     title: 'Material Handling',
     tag: 'Logistics & Handling',
-    body: '<img src="assets/special-projects.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Optimise operations with SNME\'s comprehensive material handling solutions for every warehousing and site logistics challenge — from forklifts and reach trucks to SPMT transport for oversized loads.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Our warehouse fleet includes electric, LPG, diesel, and dual-fuel forklifts, reach stackers, VNA trucks, and pallet operated trolleys.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Equipment</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Forklifts 1.5T–45T<br>Reach trucks<br>Reach stackers<br>VNA trucks<br>Pallet trolleys</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Applications</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Warehousing<br>Port operations<br>Construction logistics<br>Industrial plants<br>Airports</div></div></div>'
+    body: '<img src="https://a.storyblok.com/f/268200/412x300/32058f1dc7/material_handling.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Optimise operations with SNME\'s comprehensive material handling solutions for every warehousing and site logistics challenge — from forklifts and reach trucks to SPMT transport for oversized loads.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Our warehouse fleet includes electric, LPG, diesel, and dual-fuel forklifts, reach stackers, VNA trucks, and pallet operated trolleys.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Equipment</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Forklifts 1.5T–45T<br>Reach trucks<br>Reach stackers<br>VNA trucks<br>Pallet trolleys</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Applications</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Warehousing<br>Port operations<br>Construction logistics<br>Industrial plants<br>Airports</div></div></div>'
   }
 };
 
@@ -2992,59 +2832,6 @@ function closeSvcDetail(e) {
   if (e && e.target !== document.getElementById('svcOverlay')) return;
   document.getElementById('svcOverlay').style.display = 'none';
   document.body.style.overflow = '';
-}
-
-var fleetData = {
-  mobile: {
-    title: 'Mobile Cranes',
-    tag: 'Hydraulic Telescopic Fleet',
-    body: '<img src="assets/sarens-nass-mobile-crane-bahrain.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">SNME has comprehensive modern hydraulic telescopic cranes with a variety of capacities and tonnages. All hoisting operations are executed by qualified and experienced professionals with a sharp eye for detail.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Upon request, SNME surveys the works to be conducted on site and draws up the necessary hoisting plans and load tables.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Capacity Range</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">25T to 750T<br>All-terrain LTM series<br>Rough-terrain RT series<br>City cranes<br>Truck-mounted cranes</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Key Brands</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Liebherr<br>Grove<br>Tadano<br>Terex<br>Kobelco</div></div></div>'
-  },
-  crawler: {
-    title: 'Crawler Cranes',
-    tag: 'Lattice Boom Fleet',
-    body: '<img src="assets/crawler-cranes.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Sarens Nass has a wide range of lattice boom cranes available for many types of applications. The cranes are transported to and assembled on site — their structure allows high capacities and long boom lengths.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">All hoisting operations are executed by qualified and well-trained professionals with a sharp eye for detail. SNME surveys the works on site and draws up the necessary hoisting plans and load tables.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Capacity Range</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">100T to 1,500T<br>LR series<br>CC series<br>Ringer cranes available<br>Heavy lift configurations</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Applications</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Reactor installation<br>Module lifts<br>Wind turbine erection<br>Bridge construction<br>Refinery turnarounds</div></div></div>'
-  },
-  spmt: {
-    title: 'Axles / SPMTs',
-    tag: 'Heavy Transport',
-    body: '<img src="assets/axles-spmts.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Revolutionise heavy-load transportation with SPMT (Self-Propelled Modular Trailer). Versatile, efficient and powerful — conquers diverse loads with ease, from petrochemical modules to offshore topsides.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">SNME operates one of the largest SPMT fleets in the Middle East, supporting full project lifecycle from heavy haul road transport to plant-site installation.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Equipment</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Goldhofer axle lines<br>Scheuerle SPMTs<br>Modular trailers<br>Hydraulic axle lines<br>Power Pack Units (PPUs)</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Capabilities</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Loads up to 5,000T<br>Module transport<br>Topsides skidding<br>Vessel jacking<br>Refinery shutdowns</div></div></div>'
-  },
-  forklift: {
-    title: 'Forklift & Warehousing Equipment',
-    tag: 'Material Handling Fleet',
-    body: '<img src="assets/forklifts.png" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Sarens Nass provides a full range of warehousing equipment — electric, LPG, dual fuel and diesel forklifts, as well as reach trucks, reach stackers, Very Narrow Aisle (VNA), Aisle Master and pallet-operated trolleys — to meet all warehousing needs.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">All equipment is maintained to international standards with third-party inspection certifications and trained operators available.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Fleet</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Forklifts 1.5T–45T<br>Reach trucks<br>Reach stackers<br>VNA trucks<br>Aisle Masters</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Sectors</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Warehousing<br>Port operations<br>Construction logistics<br>Industrial plants<br>Airports</div></div></div>'
-  },
-  loaders: {
-    title: 'Loaders',
-    tag: 'Wheel & Pipe Loaders',
-    body: '<img src="assets/loaders.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Sarens Nass provides application-specific wheel and pipe loaders that are technically modified to move everything from rocks to piping — supporting heavy industrial operations across the GCC.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Available for both short and long-term rental, with options for bare, operated or fully maintained packages.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Types</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Wheel loaders<br>Pipe loaders<br>Skid-steer loaders<br>Backhoe loaders<br>Customised attachments</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Applications</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Quarrying<br>Pipe yard handling<br>Construction sites<br>Port operations<br>Bulk material handling</div></div></div>'
-  },
-  sweepers: {
-    title: 'Power Sweepers',
-    tag: 'Site Maintenance Equipment',
-    body: '<img src="assets/power-sweepers.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">Sarens Nass provides rental services for mechanical and vacuum sweepers across residential, airport, sea port, construction and industrial sectors.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">A clean operating environment is critical to both safety performance and operational efficiency — our sweeper fleet keeps demanding sites consistently compliant.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Types</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Mechanical sweepers<br>Vacuum sweepers<br>Ride-on sweepers<br>Pedestrian sweepers<br>Industrial scrubbers</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Sectors</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Airports<br>Sea ports<br>Industrial plants<br>Construction sites<br>Residential</div></div></div>'
-  },
-  manlifts: {
-    title: 'Manlifts',
-    tag: 'Access Platforms',
-    body: '<img src="assets/manlifts.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">SNME has a fleet of reliable, safe and durable access platforms with working heights ranging from 20m to 43m in articulated and telescopic boom configurations. Suitable for both indoor and outdoor applications.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">Whether on rough terrain or finished flooring, these diesel-powered self-propelled lift platforms can reach up, over and above obstacles to handle the most demanding access work.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Types</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Articulated boom lifts<br>Telescopic boom lifts<br>Scissor lifts<br>Spider lifts<br>Vertical mast lifts</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Specifications</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Working height 20m–43m<br>Diesel & electric<br>Rough-terrain capable<br>Indoor/outdoor use<br>Trained operators</div></div></div>'
-  },
-  trucks: {
-    title: 'Trucks & Trailers',
-    tag: 'Heavy Haulage Fleet',
-    body: '<img src="assets/trucks.jpg" style="width:100%;max-height:280px;object-fit:cover;margin-bottom:24px" loading="lazy" decoding="async"><p style="font-size:16px;line-height:1.8;color:#3a3f42;margin-bottom:20px">SNME owns up to 200 units of trucks, trailers (flatbed, low-bed, kneel-down) and hydraulic axle lines to provide flexibility of choice for every customer.</p><p style="font-size:15px;line-height:1.7;color:#8C9399;margin-bottom:24px">We are considered the "Single-Source-Supplier" — able to cater to all customer needs from fabrication shop right through to project site erection.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Fleet</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Prime movers (Volvo, Mercedes, Scania)<br>Flatbed trailers<br>Low-bed trailers<br>Kneel-down trailers<br>Hydraulic axle lines</div></div><div style="padding:16px;background:#F8FAFB;border-radius:4px"><div style="font-size:12px;font-weight:700;color:#2A5E97;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Services</div><div style="font-size:13px;color:#3a3f42;line-height:1.7">Heavy haulage<br>Project cargo<br>Cross-border GCC<br>Site-to-site logistics<br>Permitted loads</div></div></div>'
-  }
-};
-
-function openFleetDetail(key) {
-  var d = fleetData[key];
-  if (!d) return;
-  document.getElementById('svcTitle').textContent = d.title;
-  document.getElementById('svcTag').textContent = d.tag;
-  document.getElementById('svcBody').innerHTML = d.body;
-  document.getElementById('svcOverlay').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
 }
 </script>
 
