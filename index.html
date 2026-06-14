@@ -2546,6 +2546,7 @@ function selectCountry(el,code){
 
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <!-- ═══ CAREERS JS ════════════════════════════ -->
 <script>
 const JD_DATA = {
@@ -2723,6 +2724,9 @@ function openSvcDetail(k){var d=SNME_SVC[k];if(!d)return false;snmeOpenModal('sv
 function openFleetDetail(k){var d=SNME_FLEET[k];if(!d)return false;snmeOpenModal('fleetDetailOverlay','<div class="jd-tag">Fleet</div><div class="jd-title">'+snmeEsc(d.t)+'</div>','<p style="font-size:15px;line-height:1.7;color:#4a5560">'+snmeEsc(d.x)+'</p>');return false;}
 function openProject(cat){var d=SNME_PROJ[cat];if(!d)return false;var meta=d.m.map(function(r){return '<div style="flex:1;min-width:90px"><div style="font-size:20px;font-weight:800;color:#2A5E97">'+snmeEsc(r[0])+'</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#8C9399;margin-top:2px">'+snmeEsc(r[1])+'</div></div>';}).join('');snmeOpenModal('projDetailOverlay','<div class="jd-tag">'+snmeEsc(d.tag)+'</div><div class="jd-title">'+snmeEsc(d.t)+'</div><div style="font-size:13px;color:#8C9399;margin-top:4px">'+snmeEsc(d.c)+'</div>','<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid #e6e9ec">'+meta+'</div><p style="font-size:15px;line-height:1.7;color:#4a5560">'+snmeEsc(d.x)+'</p>');return false;}
 (function(){function bindProj(){var cards=document.querySelectorAll('.proj-card');for(var i=0;i<cards.length;i++){(function(c){c.style.cursor='pointer';c.addEventListener('click',function(){openProject(c.getAttribute('data-cat'));});})(cards[i]);}document.addEventListener('keydown',function(e){if(e.key==='Escape'){var ops=document.querySelectorAll('.jd-overlay.open');for(var j=0;j<ops.length;j++){ops[j].classList.remove('open');}document.body.style.overflow='';}});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',bindProj);}else{bindProj();}})();
+var _snmeSB=null;function snmeGetSB(){if(_snmeSB)return _snmeSB;var U='https://mlkteenajiuuewkwbkqn.supabase.co';var K='sb_publishable_k4EkLpw7L_-zWgJNw4_lcg_Aoy2SyaS';if(window.supabase&&U&&K){_snmeSB=window.supabase.createClient(U,K);}return _snmeSB;}
+async function submitRFQ(){var btn=document.getElementById('rfqSubmitBtn');var firstName=document.getElementById('rfqFirstName').value.trim();var lastName=document.getElementById('rfqLastName').value.trim();var company=document.getElementById('rfqCompany').value.trim();var country=document.getElementById('rfqCountry').value;var service=document.getElementById('rfqService').value;var timeline=document.getElementById('rfqTimeline').value;var scope=document.getElementById('rfqScope').value.trim();var description=document.getElementById('rfqDescription').value.trim();if(!firstName||!lastName||!company){showRFQMsg('error','Please fill in First Name, Last Name and Company.');return;}if(btn){btn.disabled=true;btn.textContent='Submitting...';}try{var sb=snmeGetSB();if(!sb)throw new Error('Supabase not configured');var res=await sb.from('rfq_submissions').insert([{first_name:firstName,last_name:lastName,company:company,country:country,service:service,timeline:timeline,scope:scope,description:description}]);if(res.error)throw res.error;showRFQMsg('success','Enquiry received. Our engineering team will contact you within 24 hours.');if(btn)btn.textContent='Enquiry Sent';['rfqFirstName','rfqLastName','rfqCompany','rfqScope','rfqDescription'].forEach(function(id){document.getElementById(id).value='';});['rfqCountry','rfqService','rfqTimeline'].forEach(function(id){document.getElementById(id).selectedIndex=0;});}catch(err){console.error(err);showRFQMsg('error','Something went wrong. Please try again or contact us directly.');if(btn){btn.disabled=false;btn.textContent='Submit Project Enquiry';}}}
+function showRFQMsg(type,text){var m=document.getElementById('rfqMsg');if(!m)return;m.style.display='block';m.style.background=type==='success'?'#e8f5e9':'#fdecea';m.style.color=type==='success'?'#2e7d32':'#c62828';m.style.border='1px solid '+(type==='success'?'#a5d6a7':'#ef9a9a');m.textContent=text;m.scrollIntoView({behavior:'smooth',block:'nearest'});}
 
 function handleFile(input) {
   const file = input.files[0];
@@ -3058,53 +3062,4 @@ function openFleetDetail(key) {
 }
 </script>
 
-<!-- ═══ SUPABASE — RFQ FORM INTEGRATION ══════════════════════════════════ -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-  const SUPABASE_URL  = 'https://mlkteenajiuuewkwbkqn.supabase.co';
-  const SUPABASE_ANON = 'sb_publishable_k4EkLpw7L_-zWgJNw4_lcg_Aoy2SyaS';
-  const _supabase = (SUPABASE_URL && SUPABASE_ANON)
-    ? supabase.createClient(SUPABASE_URL, SUPABASE_ANON) : null;
-
-  async function submitRFQ() {
-    const btn = document.getElementById('rfqSubmitBtn');
-    const firstName   = document.getElementById('rfqFirstName').value.trim();
-    const lastName    = document.getElementById('rfqLastName').value.trim();
-    const company     = document.getElementById('rfqCompany').value.trim();
-    const country     = document.getElementById('rfqCountry').value;
-    const service     = document.getElementById('rfqService').value;
-    const timeline    = document.getElementById('rfqTimeline').value;
-    const scope       = document.getElementById('rfqScope').value.trim();
-    const description = document.getElementById('rfqDescription').value.trim();
-
-    if (!firstName || !lastName || !company) {
-      showRFQMsg('error','Please fill in First Name, Last Name and Company.'); return;
-    }
-    btn.disabled = true; btn.textContent = 'Submitting…';
-    try {
-      if (!_supabase) throw new Error('Supabase not configured');
-      const { error } = await _supabase.from('rfq_submissions')
-        .insert([{first_name:firstName,last_name:lastName,company,country,service,timeline,scope,description}]);
-      if (error) throw error;
-      showRFQMsg('success','✓ Enquiry received. Our engineering team will contact you within 24 hours.');
-      btn.textContent = 'Enquiry Sent ✓';
-      ['rfqFirstName','rfqLastName','rfqCompany','rfqScope','rfqDescription'].forEach(id=>document.getElementById(id).value='');
-      ['rfqCountry','rfqService','rfqTimeline'].forEach(id=>document.getElementById(id).selectedIndex=0);
-    } catch(err) {
-      console.error(err);
-      showRFQMsg('error','Something went wrong. Please try again or contact us directly.');
-      btn.disabled=false; btn.textContent='Submit Project Enquiry →';
-    }
-  }
-
-  function showRFQMsg(type,text) {
-    const m = document.getElementById('rfqMsg');
-    m.style.display='block';
-    m.style.background = type==='success'?'#e8f5e9':'#fdecea';
-    m.style.color       = type==='success'?'#2e7d32':'#c62828';
-    m.style.border      = `1px solid ${type==='success'?'#a5d6a7':'#ef9a9a'}`;
-    m.textContent = text;
-    m.scrollIntoView({behavior:'smooth',block:'nearest'});
-  }
-</script>
 </body></html>
